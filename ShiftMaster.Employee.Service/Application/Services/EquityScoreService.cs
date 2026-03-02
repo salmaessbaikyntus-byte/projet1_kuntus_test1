@@ -2,6 +2,7 @@ using Microsoft.Extensions.Logging;
 using ShiftMaster.Employee.Service.Application.Interfaces;
 using ShiftMaster.Employee.Service.Domain.Entities;
 using ShiftMaster.Employee.Service.Domain.Interfaces;
+using EmployeeEntity = ShiftMaster.Employee.Service.Domain.Entities.Employee;
 
 namespace ShiftMaster.Employee.Service.Application.Services;
 
@@ -51,7 +52,7 @@ public sealed class EquityScoreService(
     /// Availability score 0-100: coverage of weekdays declared as available.
     /// At least Mon-Fri expected for full score.
     /// </summary>
-    private static int ComputeAvailabilityScore(Employee employee)
+    private static int ComputeAvailabilityScore(EmployeeEntity employee)
     {
         var slots = employee.AvailabilitySlots.Where(a => a.IsAvailable).ToList();
         if (slots.Count == 0) return 0;

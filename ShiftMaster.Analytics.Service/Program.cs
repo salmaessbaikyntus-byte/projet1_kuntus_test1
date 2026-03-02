@@ -1,6 +1,7 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Scalar.AspNetCore;
 using Serilog;
 using ShiftMaster.Analytics.Service.Application.Interfaces;
 using ShiftMaster.Analytics.Service.Application.Services;
@@ -9,8 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog((c, lc) => lc.WriteTo.Console());
 
 builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c => c.SwaggerDoc("v1", new() { Title = "ShiftMaster Analytics API", Version = "v1" }));
+builder.Services.AddOpenApi();
 
 var jwtKey = builder.Configuration["Jwt:Key"] ?? throw new InvalidOperationException("Jwt:Key required");
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(o =>
@@ -29,7 +29,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 builder.Services.AddScoped<IAnalyticsService, AnalyticsService>();
 
 var app = builder.Build();
-if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); }
+app.MapOpenApi();
+if (app.Environment.IsDevelopment())
+    app.MapScalarApiReference();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();

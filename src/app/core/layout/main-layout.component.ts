@@ -1,7 +1,8 @@
-import { Component, signal, computed, effect } from '@angular/core';
+import { Component, signal, computed, effect, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
+import { NotificationSignalService } from '../services/notification-signal.service';
 import { Role } from '../../shared/types';
 import { cn } from '../../shared/utils';
 
@@ -98,7 +99,9 @@ interface NavItem {
             </div>
             <button class="relative p-2 text-slate-500 hover:text-slate-900">
               <span [innerHTML]="bellIcon"></span>
-              <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+              @if (notificationService.unreadCount() > 0) {
+                <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+              }
             </button>
             <div class="flex items-center gap-3 pl-4 border-l border-slate-200">
               <div class="text-right hidden sm:block">
@@ -158,6 +161,8 @@ export class MainLayoutComponent {
     const item = this.navigation.find((n) => n.route === url || (url.startsWith(n.route) && n.route !== '/'));
     return item?.name?.replace(' ', '-')?.toLowerCase() ?? 'dashboard';
   });
+
+  readonly notificationService = inject(NotificationSignalService);
 
   constructor(
     public auth: AuthService,

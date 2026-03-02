@@ -9,6 +9,7 @@ using ShiftMaster.Employee.Service.Infrastructure.Messaging;
 using ShiftMaster.Employee.Service.Infrastructure.Persistence;
 using ShiftMaster.Employee.Service.API.Filters;
 using RabbitMQ.Client;
+using Scalar.AspNetCore;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,8 +20,7 @@ builder.Host.UseSerilog((ctx, lc) =>
       .WriteTo.Console());
 
 builder.Services.AddControllers(options => options.Filters.Add<CorrelationIdFilter>());
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c => c.SwaggerDoc("v1", new() { Title = "ShiftMaster Employee API", Version = "v1" }));
+builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<EmployeeDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -54,6 +54,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+builder.Services.Configure<ShiftMaster.Employee.Service.Infrastructure.Planning.PlanningClientOptions>(
+    builder.Configuration.GetSection(ShiftMaster.Employee.Service.Infrastructure.Planning.PlanningClientOptions.Section));
+builder.Services.AddHttpClient(nameof(ShiftMaster.Employee.Service.Infrastructure.Planning.HttpShiftStatisticsProvider));
+builder.Services.AddScoped<IShiftStatisticsProvider, ShiftMaster.Employee.Service.Infrastructure.Planning.HttpShiftStatisticsProvider>();
+builder.Services.AddScoped<IEquityScoreService, EquityScoreService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IEventPublisher, RabbitMqEventPublisher>();
@@ -71,11 +76,9 @@ using (var scope = app.Services.CreateScope())
     await DataSeeder.SeedAsync(context);
 }
 
+app.MapOpenApi();
 if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    app.MapScalarApiReference();
 
 app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();

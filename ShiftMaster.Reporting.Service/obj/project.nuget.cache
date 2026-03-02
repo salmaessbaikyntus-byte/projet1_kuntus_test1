@@ -1,16 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "h+/yap4uHG4=",
+  "dgSpecHash": "IvKBiN9tUUU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pc\\Downloads\\shiftmaster-enterprise TEST1\\ShiftMaster.Reporting.Service\\ShiftMaster.Reporting.Service.csproj",
+  "projectFilePath": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Reporting.Service\\ShiftMaster.Reporting.Service.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Pc\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.24\\microsoft.aspnetcore.openapi.8.0.24.nupkg.sha512",
-    "C:\\Users\\Pc\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
-    "C:\\Users\\Pc\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
-    "C:\\Users\\Pc\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
-    "C:\\Users\\Pc\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
-    "C:\\Users\\Pc\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
-    "C:\\Users\\Pc\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.6.2\\swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512"
+    "C:\\Users\\IMANE.OUARY\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.3\\microsoft.aspnetcore.openapi.10.0.3.nupkg.sha512",
+    "C:\\Users\\IMANE.OUARY\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\IMANE.OUARY\\.nuget\\packages\\scalar.aspnetcore\\2.12.50\\scalar.aspnetcore.2.12.50.nupkg.sha512"
   ],
   "logs": []
 }

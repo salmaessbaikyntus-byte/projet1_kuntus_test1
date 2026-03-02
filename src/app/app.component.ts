@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
 import { MainLayoutComponent } from './core/layout/main-layout.component';
+import { MOCK_ALERTS } from './shared/mock-data';
+import { NotificationSignalService } from './core/services/notification-signal.service';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,20 @@ import { MainLayoutComponent } from './core/layout/main-layout.component';
   imports: [MainLayoutComponent],
   template: `<app-main-layout></app-main-layout>`,
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  private readonly notificationService = inject(NotificationSignalService);
+
+  ngOnInit(): void {
+    this.notificationService.setNotifications(
+      MOCK_ALERTS.map((a) => ({
+        id: a.id,
+        type: a.type,
+        message: a.message,
+        priority: a.priority,
+        time: a.time,
+        team: a.team,
+        read: false,
+      }))
+    );
+  }
+}

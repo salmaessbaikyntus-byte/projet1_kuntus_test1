@@ -1,0 +1,10 @@
+-- ============================================================
+-- DONNÉES FAKE - Manager, RH, Admin, Auditor
+-- Base: shiftmaster_auth
+-- ATTENTION: Ce script insère des utilisateurs avec des mots de passe hashés.
+-- Préférez l'exécution du DataSeeder C# au démarrage de l'application Auth
+-- (les utilisateurs seront créés automatiquement).
+-- ============================================================
+-- Pour des insertions manuelles, vous devez générer les hash PasswordHash
+-- via ASP.NET Identity. Utilisez le DataSeeder C# fourni.
+-- ============================================================

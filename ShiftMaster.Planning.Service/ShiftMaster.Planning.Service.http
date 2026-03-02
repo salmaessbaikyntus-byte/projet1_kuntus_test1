@@ -1,0 +1,6 @@
+@ShiftMaster.Planning.Service_HostAddress = http://localhost:5255
+
+GET {{ShiftMaster.Planning.Service_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

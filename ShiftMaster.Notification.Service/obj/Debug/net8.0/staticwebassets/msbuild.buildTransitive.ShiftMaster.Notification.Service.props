@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\ShiftMaster.Notification.Service.props" />
-</Project>

@@ -53,6 +53,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ClockSkew = TimeSpan.Zero
         };
     });
+builder.Services.AddAuthorization();
 
 builder.Services.Configure<ShiftMaster.Employee.Service.Infrastructure.Planning.PlanningClientOptions>(
     builder.Configuration.GetSection(ShiftMaster.Employee.Service.Infrastructure.Planning.PlanningClientOptions.Section));

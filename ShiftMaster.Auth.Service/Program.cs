@@ -56,6 +56,7 @@ builder.Services.AddAuthentication(Microsoft.AspNetCore.Authentication.JwtBearer
             ClockSkew = TimeSpan.Zero
         };
     });
+builder.Services.AddAuthorization();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddValidatorsFromAssemblyContaining<LoginRequestValidator>();

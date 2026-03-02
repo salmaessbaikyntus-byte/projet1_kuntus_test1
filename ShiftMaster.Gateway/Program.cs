@@ -13,6 +13,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     {
         options.TokenValidationParameters = new TokenValidationParameters
         {
+            ValidateIssuer = true,
+            ValidateAudience = true,
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? throw new InvalidOperationException("Jwt:Key required"))),
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
@@ -27,10 +29,11 @@ builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-app.MapReverseProxy();
-app.MapOpenApi();
+app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+app.MapReverseProxy();
+app.MapOpenApi();
 
 if (app.Environment.IsDevelopment())
     app.MapScalarApiReference();

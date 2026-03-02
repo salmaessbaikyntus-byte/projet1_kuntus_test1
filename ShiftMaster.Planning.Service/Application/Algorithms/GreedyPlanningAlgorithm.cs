@@ -19,7 +19,7 @@ public class GreedyPlanningAlgorithm : IPlanningAlgorithm
 
         for (var d = 0; d < 7; d++)
         {
-            var date = request.WeekStart.AddDays(d);
+            var date = weekStart.AddDays(d);
             if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
                 continue;
 

@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\ShiftMaster.Gateway.props" />
-</Project>

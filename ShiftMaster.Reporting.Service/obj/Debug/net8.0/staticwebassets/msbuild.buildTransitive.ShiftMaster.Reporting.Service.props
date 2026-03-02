@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\ShiftMaster.Reporting.Service.props" />
-</Project>

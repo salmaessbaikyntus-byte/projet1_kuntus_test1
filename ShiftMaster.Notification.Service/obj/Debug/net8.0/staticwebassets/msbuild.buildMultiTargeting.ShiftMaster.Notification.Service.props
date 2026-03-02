@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\ShiftMaster.Notification.Service.props" />
-</Project>

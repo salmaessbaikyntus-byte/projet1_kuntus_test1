@@ -6,3 +6,6 @@ public record MonthPlanningDto(IReadOnlyList<ShiftDto> Shifts, int Year, int Mon
 public record PlanningKpisDto(decimal Coverage, decimal EquityScore, int AssignedEmployees, int UncoveredSlots, bool IsCompliant);
 public record SimulateRequest(DateTime WeekStart, string CellId);
 public record SimulateResponse(Guid PlanningId, DateTime WeekStart, decimal Coverage, bool IsCompliant);
+
+public record GenerateWeekRequest(DateTime WeekStart, string CellId, int EmployeeCount = 50);
+public record GenerateWeekResponse(Guid PlanningId, DateTime WeekStart, DateTime WeekEnd, decimal CoveragePercent, decimal PauseSensitivePercent, int AssignedCount, bool IsCompliant);

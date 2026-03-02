@@ -27,4 +27,10 @@ public class ShiftRepository : IShiftRepository
         var coverage = totalSlots > 0 ? Math.Round(count * 100m / totalSlots, 1) : 0;
         return new PlanningKpisDto(coverage, 88, count, Math.Max(0, totalSlots - count), coverage >= 90);
     }
+
+    public async Task AddShiftsAsync(IEnumerable<Shift> shifts, CancellationToken ct)
+    {
+        await _context.Shifts.AddRangeAsync(shifts, ct);
+        await _context.SaveChangesAsync(ct);
+    }
 }

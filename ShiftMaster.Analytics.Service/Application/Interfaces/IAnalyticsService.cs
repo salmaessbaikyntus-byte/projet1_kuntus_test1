@@ -6,4 +6,7 @@ public interface IAnalyticsService
 {
     Task<MyEquityDto> GetMyEquityAsync(Guid userId, string? cellId, CancellationToken ct = default);
     Task<TeamRankingDto> GetTeamRankingAsync(Guid userId, string? cellId, CancellationToken ct = default);
+    Task<IReadOnlyList<KpiDto>> GetKpisAsync(CancellationToken ct = default);
+    Task<HeatmapDto> GetHeatmapAsync(CancellationToken ct = default);
+    Task<SimulateResultDto> SimulateAsync(SimulateRequestDto request, CancellationToken ct = default);
 }

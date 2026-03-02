@@ -1,7 +1,9 @@
-import { Component, signal, computed, effect } from '@angular/core';
+import { Component, signal, computed, effect, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
+import { AuthApiService } from '../services/auth-api.service';
+import { ThemeService } from '../services/theme.service';
 import { Role } from '../../shared/types';
 import { cn } from '../../shared/utils';
 
@@ -18,21 +20,21 @@ interface NavItem {
   standalone: true,
   imports: [RouterLink, RouterLinkActive, RouterOutlet, FormsModule],
   template: `
-    <div class="min-h-screen flex bg-[#F8FAFC]">
-      <aside [class]="cn('bg-white border-r border-slate-200 transition-all duration-300 flex flex-col z-50', isSidebarOpen() ? 'w-64' : 'w-20')">
-        <div class="p-6 flex items-center gap-3 border-b border-slate-100">
+    <div class="min-h-screen flex bg-[#F8FAFC] dark:bg-slate-900">
+      <aside [class]="cn('bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 transition-all duration-300 flex flex-col z-50', isSidebarOpen() ? 'w-64' : 'w-20')">
+        <div class="p-6 flex items-center gap-3 border-b border-slate-100 dark:border-slate-700">
           <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold">S</div>
           @if (isSidebarOpen()) {
-            <span class="font-bold text-xl tracking-tight text-slate-900">ShiftMaster</span>
+            <span class="font-bold text-xl tracking-tight text-slate-900 dark:text-white">ShiftMaster</span>
           }
         </div>
 
-        <div class="p-4 border-b border-slate-100">
+        <div class="p-4 border-b border-slate-100 dark:border-slate-700">
           <select
             [ngModel]="auth.user()?.role"
             (ngModelChange)="onRoleChange(\$event)"
             [class.hidden]="!isSidebarOpen()"
-            class="w-full bg-slate-50 border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-bold text-slate-600 focus:ring-2 focus:ring-indigo-500"
+            class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg px-2 py-1.5 text-xs font-bold text-slate-600 dark:text-slate-300 focus:ring-2 focus:ring-indigo-500"
           >
             <option value="MANAGER">Manager View</option>
             <option value="RH">RH View</option>
@@ -48,7 +50,7 @@ interface NavItem {
               [routerLink]="item.route"
               routerLinkActive="bg-indigo-50 text-indigo-700"
               [routerLinkActiveOptions]="{exact: item.route === '/dashboard' || item.route === '/employee-dashboard'}"
-              class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors text-sm font-medium block text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+              class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors text-sm font-medium block text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white"
             >
               <span class="shrink-0" [innerHTML]="item.icon"></span>
               @if (isSidebarOpen()) {
@@ -58,14 +60,14 @@ interface NavItem {
           }
         </nav>
 
-        <div class="p-4 border-t border-slate-100">
-          <button class="w-full flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:bg-slate-50 rounded-lg text-sm" (click)="toggleDarkMode()">
-            <span [innerHTML]="isDarkMode() ? sunIcon : moonIcon"></span>
+        <div class="p-4 border-t border-slate-100 dark:border-slate-700">
+          <button class="w-full flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-lg text-sm" (click)="theme.toggle()">
+            <span [innerHTML]="theme.isDarkMode() ? sunIcon : moonIcon"></span>
             @if (isSidebarOpen()) {
-              <span>{{ isDarkMode() ? 'Light Mode' : 'Dark Mode' }}</span>
+              <span>{{ theme.isDarkMode() ? 'Light Mode' : 'Dark Mode' }}</span>
             }
           </button>
-          <button class="w-full flex items-center gap-3 px-3 py-2.5 text-red-600 hover:bg-red-50 rounded-lg text-sm mt-1" (click)="auth.logout()">
+          <button class="w-full flex items-center gap-3 px-3 py-2.5 text-red-600 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-lg text-sm mt-1" (click)="logout()">
             <span [innerHTML]="logoutIcon"></span>
             @if (isSidebarOpen()) {
               <span>Logout</span>
@@ -75,15 +77,15 @@ interface NavItem {
       </aside>
 
       <main class="flex-1 flex flex-col min-w-0 overflow-hidden">
-        <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8 shrink-0">
+        <header class="h-16 bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between px-8 shrink-0">
           <div class="flex items-center gap-4">
-            <button (click)="toggleSidebar()" class="p-2 hover:bg-slate-100 rounded-lg">
+            <button (click)="toggleSidebar()" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg">
               <span [innerHTML]="isSidebarOpen() ? menuCloseIcon : menuIcon"></span>
             </button>
-            <div class="flex items-center text-sm text-slate-500">
+            <div class="flex items-center text-sm text-slate-500 dark:text-slate-400">
               <span>ShiftMaster</span>
               <span class="mx-1" [innerHTML]="chevronIcon"></span>
-              <span class="text-slate-900 font-medium capitalize">{{ currentTabLabel() }}</span>
+              <span class="text-slate-900 dark:text-white font-medium capitalize">{{ currentTabLabel() }}</span>
             </div>
           </div>
 
@@ -93,19 +95,19 @@ interface NavItem {
               <input
                 type="text"
                 placeholder="Search anything..."
-                class="pl-10 pr-4 py-2 bg-slate-100 border-none rounded-full text-sm w-64 focus:ring-2 focus:ring-indigo-500 transition-all"
+                class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-700 border-none rounded-full text-sm w-64 focus:ring-2 focus:ring-indigo-500 transition-all text-slate-900 dark:text-white placeholder-slate-500"
               />
             </div>
-            <button class="relative p-2 text-slate-500 hover:text-slate-900">
+            <button class="relative p-2 text-slate-500 hover:text-slate-900 dark:hover:text-white">
               <span [innerHTML]="bellIcon"></span>
               <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
             </button>
-            <div class="flex items-center gap-3 pl-4 border-l border-slate-200">
+            <div class="flex items-center gap-3 pl-4 border-l border-slate-200 dark:border-slate-700">
               <div class="text-right hidden sm:block">
-                <p class="text-sm font-semibold text-slate-900">{{ auth.user()?.name }}</p>
-                <p class="text-xs text-slate-500">{{ auth.user()?.role }}</p>
+                <p class="text-sm font-semibold text-slate-900 dark:text-white">{{ auth.user()?.name }}</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">{{ auth.user()?.role }}</p>
               </div>
-              <div class="w-9 h-9 bg-slate-200 rounded-full flex items-center justify-center text-slate-600">
+              <div class="w-9 h-9 bg-slate-200 dark:bg-slate-600 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300">
                 <span [innerHTML]="userIcon"></span>
               </div>
             </div>
@@ -119,9 +121,8 @@ interface NavItem {
     </div>
   `,
 })
-export class MainLayoutComponent {
+export class MainLayoutComponent implements OnInit {
   isSidebarOpen = signal(true);
-  isDarkMode = signal(false);
 
   menuIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="18" x2="20" y2="18"/></svg>';
   menuCloseIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
@@ -161,6 +162,8 @@ export class MainLayoutComponent {
 
   constructor(
     public auth: AuthService,
+    public authApi: AuthApiService,
+    public theme: ThemeService,
     public router: Router
   ) {
     effect(() => {
@@ -175,14 +178,30 @@ export class MainLayoutComponent {
     });
   }
 
+  ngOnInit(): void {
+    if (this.authApi.getToken()) {
+      this.authApi.me().subscribe({
+        next: (me) => {
+          this.auth.updateUser({
+            id: me.userId,
+            name: me.name,
+            email: me.email,
+            role: me.role as Role,
+          });
+        },
+      });
+    }
+  }
+
   cn = cn;
 
   toggleSidebar(): void {
     this.isSidebarOpen.update((v) => !v);
   }
 
-  toggleDarkMode(): void {
-    this.isDarkMode.update((v) => !v);
+  logout(): void {
+    this.auth.logout();
+    this.router.navigate(['/login']);
   }
 
   onRoleChange(role: Role): void {

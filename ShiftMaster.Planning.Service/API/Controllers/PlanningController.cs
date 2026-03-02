@@ -42,6 +42,13 @@ public class PlanningController : ControllerBase
         return Ok(await _planningService.GetMonthAsync(userId, year, month, GetCellId(), ct));
     }
 
+    [HttpPost("generate-week")]
+    [ProducesResponseType(typeof(GenerateWeekResponse), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GenerateWeek([FromBody] GenerateWeekRequest request, CancellationToken ct)
+    {
+        return Ok(await _planningService.GenerateWeekAsync(request, ct));
+    }
+
     [HttpPost("simulate")]
     [ProducesResponseType(typeof(SimulateResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> Simulate([FromBody] SimulateRequest request, CancellationToken ct)

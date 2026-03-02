@@ -27,4 +27,39 @@ public class AnalyticsService : IAnalyticsService
         };
         return Task.FromResult(new TeamRankingDto(rankings));
     }
+
+    public Task<IReadOnlyList<KpiDto>> GetKpisAsync(CancellationToken ct = default)
+    {
+        var kpis = new List<KpiDto>
+        {
+            new("Coverage", "Taux couverture plateau", 93.4m, "%", 2.1m, "ok"),
+            new("EquityIndex", "Indice équité", 88m, "/100", 5.4m, "ok"),
+            new("RuleCompliance", "Respect règle 10 %", 98.2m, "%", -0.4m, "ok"),
+            new("EstimatedCost", "Coût RH estimé", 42500m, "€/sem", 1.2m, "warning")
+        };
+        return Task.FromResult<IReadOnlyList<KpiDto>>(kpis);
+    }
+
+    public Task<HeatmapDto> GetHeatmapAsync(CancellationToken ct = default)
+    {
+        var days = new[] { "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim" };
+        var shifts = new[] { "Matin", "Après-midi", "Nuit" };
+        var values = new decimal[][]
+        {
+            [92, 94, 98, 91, 95, 88, 85],
+            [90, 93, 96, 89, 94, 86, 82],
+            [88, 91, 95, 87, 92, 84, 80]
+        };
+        return Task.FromResult(new HeatmapDto(days, shifts, values, 95));
+    }
+
+    public Task<SimulateResultDto> SimulateAsync(SimulateRequestDto request, CancellationToken ct = default)
+    {
+        var impact = -request.StaffChangePercent * 1.2m;
+        var violations = request.StaffChangePercent < -5 ? 2 : 0;
+        var alerts = request.StaffChangePercent < -10
+            ? new List<AlertDto> { new("critical", "Règle 10% potentiellement violée") }
+            : new List<AlertDto>();
+        return Task.FromResult(new SimulateResultDto(impact, violations, alerts));
+    }
 }

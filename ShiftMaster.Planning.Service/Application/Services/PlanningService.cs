@@ -2,6 +2,7 @@ using Microsoft.Extensions.Logging;
 using ShiftMaster.Planning.Service.Application.DTOs;
 using ShiftMaster.Planning.Service.Application.Interfaces;
 using ShiftMaster.Planning.Service.Domain.Entities;
+using ShiftMaster.Planning.Service.Domain.Enums;
 using ShiftMaster.Planning.Service.Domain.Interfaces;
 using ShiftMaster.Planning.Service.Infrastructure.Messaging;
 using ShiftMaster.Shared.Events;
@@ -12,12 +13,14 @@ public class PlanningService : IPlanningService
 {
     private readonly IShiftRepository _repository;
     private readonly IEventPublisher _eventPublisher;
+    private readonly IPlanningAlgorithm _algorithm;
     private readonly ILogger<PlanningService> _logger;
 
-    public PlanningService(IShiftRepository repository, IEventPublisher eventPublisher, ILogger<PlanningService> logger)
+    public PlanningService(IShiftRepository repository, IEventPublisher eventPublisher, IPlanningAlgorithm algorithm, ILogger<PlanningService> logger)
     {
         _repository = repository;
         _eventPublisher = eventPublisher;
+        _algorithm = algorithm;
         _logger = logger;
     }
 
@@ -45,6 +48,42 @@ public class PlanningService : IPlanningService
         var shifts = await _repository.GetShiftsAsync(start, end, cellId, userId, ct);
         var kpis = await _repository.GetKpisAsync(start, end, cellId, ct);
         return new MonthPlanningDto(MapShifts(shifts), year, month, kpis);
+    }
+
+    public async Task<GenerateWeekResponse> GenerateWeekAsync(GenerateWeekRequest request, CancellationToken ct = default)
+    {
+        var weekEnd = request.WeekStart.AddDays(7);
+        var result = await _algorithm.GenerateWeekAsync(request.WeekStart, request.CellId, request.EmployeeCount, ct);
+
+        var shifts = result.Shifts.Select(s => new Shift
+        {
+            Id = Guid.NewGuid(),
+            EmployeeId = s.EmployeeId,
+            EmployeeName = s.EmployeeName,
+            CellId = request.CellId,
+            StartTime = s.StartTime,
+            EndTime = s.EndTime,
+            Type = Enum.TryParse<ShiftType>(s.Type, out var t) ? t : ShiftType.Morning,
+            Status = ShiftStatus.Draft,
+            Date = s.StartTime.Date
+        }).ToList();
+
+        await _repository.AddShiftsAsync(shifts, ct);
+
+        var planningId = Guid.NewGuid();
+        await _eventPublisher.PublishPlanningGeneratedAsync(new PlanningGeneratedEvent
+        {
+            PlanningId = planningId,
+            CellId = request.CellId,
+            WeekStart = request.WeekStart,
+            WeekEnd = weekEnd,
+            AssignedEmployeesCount = result.Metrics.AssignedCount,
+            CoveragePercent = result.Metrics.CoveragePercent,
+            IsCompliant = result.Metrics.IsCompliant
+        }, ct);
+
+        _logger.LogInformation("Generated planning {PlanningId} with {Count} shifts via {Algorithm}", planningId, shifts.Count, _algorithm.Name);
+        return new GenerateWeekResponse(planningId, request.WeekStart, weekEnd, result.Metrics.CoveragePercent, result.Metrics.PauseSensitivePercent, result.Metrics.AssignedCount, result.Metrics.IsCompliant);
     }
 
     public async Task<SimulateResponse> SimulateAsync(SimulateRequest request, CancellationToken ct = default)

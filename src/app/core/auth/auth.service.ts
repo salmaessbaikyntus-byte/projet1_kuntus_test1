@@ -1,8 +1,10 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { User, Role } from '../../shared/types';
+import { AuthApiService } from '../services/auth-api.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+  constructor(private authApi: AuthApiService) {}
   private userSignal = signal<User | null>({
     id: '1',
     name: 'Jean Manager',
@@ -21,7 +23,12 @@ export class AuthService {
     });
   }
 
+  updateUser(user: Partial<User> & { id: string; name: string; email: string; role: Role }): void {
+    this.userSignal.set(user as User);
+  }
+
   logout(): void {
+    this.authApi.clearToken();
     this.userSignal.set(null);
   }
 }

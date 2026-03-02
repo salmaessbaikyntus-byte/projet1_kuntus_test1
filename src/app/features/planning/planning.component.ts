@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { PlanningService } from '../../core/services/planning.service';
 import { MOCK_KPIS } from '../../shared/mock-data';
 import { cn } from '../../shared/utils';
 
@@ -15,7 +16,13 @@ import { cn } from '../../shared/utils';
         </div>
         <div class="flex gap-3">
           <button class="px-4 py-2 border border-slate-200 rounded-lg text-sm font-medium bg-white hover:bg-slate-50 flex items-center gap-2">History</button>
-          <button class="px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700 flex items-center gap-2 shadow-sm">Generate Planning</button>
+          <button
+            (click)="generatePlanning()"
+            [disabled]="generating()"
+            class="px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700 flex items-center gap-2 shadow-sm disabled:opacity-50"
+          >
+            {{ generating() ? 'Génération...' : 'Generate Planning' }}
+          </button>
         </div>
       </div>
 
@@ -173,6 +180,7 @@ import { cn } from '../../shared/utils';
   imports: [FormsModule],
 })
 export class PlanningComponent {
+  generating = signal(false);
   MOCK_KPIS = MOCK_KPIS;
   isSimulating = signal(false);
   selectedWeek = 'Week 10 - 2026';
@@ -184,4 +192,30 @@ export class PlanningComponent {
     { label: 'Validation & Publishing', status: 'pending' as const },
   ];
   cn = cn;
+
+  constructor(private planning: PlanningService) {}
+
+  generatePlanning(): void {
+    this.generating.set(true);
+    const monday = this.getNextMonday();
+    this.planning.generateWeek({
+      weekStart: monday.toISOString().slice(0, 10),
+      cellId: 'cell-emergency-1',
+      employeeCount: 50,
+    }).subscribe({
+      next: (res) => {
+        this.generating.set(false);
+        alert(`Planning généré : ${res.assignedCount} affectations, couverture ${res.coveragePercent}%`);
+      },
+      error: () => this.generating.set(false),
+    });
+  }
+
+  private getNextMonday(): Date {
+    const d = new Date();
+    const day = d.getDay();
+    const diff = (day === 0 ? -6 : 1) - day;
+    d.setDate(d.getDate() + diff);
+    return d;
+  }
 }

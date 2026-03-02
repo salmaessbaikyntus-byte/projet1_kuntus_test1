@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ShiftMaster.Auth.Service.Application.DTOs;
 using ShiftMaster.Auth.Service.Application.Interfaces;
+using ShiftMaster.Auth.Service.Domain.Entities;
+using ShiftMaster.Auth.Service.Infrastructure.Persistence;
 using System.Security.Claims;
 
 namespace ShiftMaster.Auth.Service.API.Controllers;
@@ -11,10 +14,26 @@ namespace ShiftMaster.Auth.Service.API.Controllers;
 public class AuthController : ControllerBase
 {
     private readonly IAuthService _authService;
+    private readonly AuthDbContext _context;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public AuthController(IAuthService authService)
+    public AuthController(IAuthService authService, AuthDbContext context, UserManager<ApplicationUser> userManager)
     {
         _authService = authService;
+        _context = context;
+        _userManager = userManager;
+    }
+
+    /// <summary>
+    /// Seed users (1 Admin, 2 RH, 2 Managers, 1 Auditeur). Idempotent.
+    /// </summary>
+    [HttpPost("seed-users")]
+    [AllowAnonymous]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<IActionResult> SeedUsers(CancellationToken ct)
+    {
+        await DataSeeder.SeedAsync(_context, _userManager);
+        return Ok(new { message = "Users seeded successfully" });
     }
 
     /// <summary>

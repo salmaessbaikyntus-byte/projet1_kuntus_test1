@@ -8,4 +8,5 @@ public interface IPlanningService
     Task<WeekPlanningDto> GetWeekAsync(Guid userId, DateTime? weekStart, string? cellId, CancellationToken ct = default);
     Task<MonthPlanningDto> GetMonthAsync(Guid userId, int year, int month, string? cellId, CancellationToken ct = default);
     Task<SimulateResponse> SimulateAsync(SimulateRequest request, CancellationToken ct = default);
+    Task<GenerateWeekResponse> GenerateWeekAsync(GenerateWeekRequest request, CancellationToken ct = default);
 }

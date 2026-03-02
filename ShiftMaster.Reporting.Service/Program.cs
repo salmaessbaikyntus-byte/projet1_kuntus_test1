@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -36,11 +37,19 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
     await DataSeeder.SeedAsync(scope.ServiceProvider.GetRequiredService<ReportingDbContext>());
 
+=======
+using Scalar.AspNetCore;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddOpenApi();
+
+var app = builder.Build();
+
+app.MapOpenApi();
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
 if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    app.MapScalarApiReference();
 
 app.UseAuthentication();
 app.UseAuthorization();

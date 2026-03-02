@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShiftMaster.Planning.Service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+074a713b01ffdc3b1806bf07c8e686514e338fae")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShiftMaster.Planning.Service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShiftMaster.Planning.Service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

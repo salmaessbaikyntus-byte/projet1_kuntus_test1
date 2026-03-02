@@ -99,7 +99,11 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+<<<<<<< HEAD
       "Microsoft.AspNetCore.OpenApi/10.0.0": {
+=======
+      "Microsoft.AspNetCore.OpenApi/10.0.3": {
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "type": "package",
         "dependencies": {
           "Microsoft.OpenApi": "2.0.0"
@@ -207,7 +211,11 @@
       "Microsoft.CodeAnalysis.Common/4.14.0": {
         "type": "package",
         "dependencies": {
+<<<<<<< HEAD
           "Microsoft.CodeAnalysis.Analyzers": "3.11.0"
+=======
+          "Microsoft.CodeAnalysis.Analyzers": "3.3.3"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         },
         "compile": {
           "lib/net9.0/Microsoft.CodeAnalysis.dll": {
@@ -385,9 +393,15 @@
         "type": "package",
         "dependencies": {
           "Humanizer.Core": "2.14.1",
+<<<<<<< HEAD
           "Microsoft.CodeAnalysis.Analyzers": "3.11.0",
           "Microsoft.CodeAnalysis.Common": "[4.14.0]",
           "System.Composition": "9.0.0"
+=======
+          "Microsoft.Bcl.AsyncInterfaces": "6.0.0",
+          "Microsoft.CodeAnalysis.Common": "[4.5.0]",
+          "System.Composition": "6.0.0"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         },
         "compile": {
           "lib/net9.0/Microsoft.CodeAnalysis.Workspaces.dll": {
@@ -444,6 +458,7 @@
       "Microsoft.CodeAnalysis.Workspaces.MSBuild/4.14.0": {
         "type": "package",
         "dependencies": {
+<<<<<<< HEAD
           "Humanizer.Core": "2.14.1",
           "Microsoft.Build": "17.7.2",
           "Microsoft.Build.Framework": "17.7.2",
@@ -460,6 +475,10 @@
           "System.Security.Cryptography.ProtectedData": "9.0.0",
           "System.Security.Permissions": "9.0.0",
           "System.Windows.Extensions": "9.0.0"
+=======
+          "Microsoft.EntityFrameworkCore.Abstractions": "8.0.11",
+          "Microsoft.EntityFrameworkCore.Analyzers": "8.0.11"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         },
         "compile": {
           "lib/net9.0/Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll": {},
@@ -861,7 +880,11 @@
       "Microsoft.EntityFrameworkCore.Relational/10.0.0": {
         "type": "package",
         "dependencies": {
+<<<<<<< HEAD
           "Microsoft.EntityFrameworkCore": "10.0.0"
+=======
+          "Microsoft.EntityFrameworkCore": "8.0.11"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         },
         "compile": {
           "lib/net10.0/Microsoft.EntityFrameworkCore.Relational.dll": {
@@ -874,6 +897,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.Extensions.ApiDescription.Server/10.0.0": {
         "type": "package",
         "build": {
@@ -889,16 +913,30 @@
         "type": "package",
         "compile": {
           "lib/net10.0/Microsoft.Extensions.DependencyModel.dll": {
+=======
+      "Microsoft.Extensions.DependencyModel/8.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
             "related": ".xml"
           }
         },
         "runtime": {
+<<<<<<< HEAD
           "lib/net10.0/Microsoft.Extensions.DependencyModel.dll": {
+=======
+          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
             "related": ".xml"
           }
         },
         "build": {
+<<<<<<< HEAD
           "buildTransitive/net8.0/_._": {}
+=======
+          "buildTransitive/net6.0/_._": {}
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         }
       },
       "Microsoft.IdentityModel.Abstractions/8.2.1": {
@@ -995,6 +1033,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.NET.StringTools/17.14.28": {
         "type": "package",
         "compile": {
@@ -1004,6 +1043,17 @@
         },
         "runtime": {
           "lib/net9.0/Microsoft.NET.StringTools.dll": {
+=======
+      "Microsoft.OpenApi/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.OpenApi.dll": {
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
             "related": ".pdb;.xml"
           }
         }
@@ -1023,9 +1073,12 @@
       },
       "Mono.TextTemplating/3.0.0": {
         "type": "package",
+<<<<<<< HEAD
         "dependencies": {
           "System.CodeDom": "6.0.0"
         },
+=======
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "compile": {
           "lib/net6.0/Mono.TextTemplating.dll": {}
         },
@@ -1092,6 +1145,22 @@
             "related": ".xml"
           }
         }
+      },
+      "Scalar.AspNetCore/2.12.50": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Serilog/3.1.1": {
         "type": "package",
@@ -1245,6 +1314,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "Swashbuckle.AspNetCore/10.1.4": {
         "type": "package",
         "dependencies": {
@@ -1312,6 +1382,9 @@
         ]
       },
       "System.CodeDom/9.0.0": {
+=======
+      "System.CodeDom/4.4.0": {
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "type": "package",
         "compile": {
           "lib/net9.0/System.CodeDom.dll": {
@@ -1327,6 +1400,7 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+<<<<<<< HEAD
       "System.Composition/9.0.0": {
         "type": "package",
         "dependencies": {
@@ -1363,6 +1437,9 @@
         }
       },
       "System.Composition.Convention/9.0.0": {
+=======
+      "System.Composition/6.0.0": {
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "type": "package",
         "dependencies": {
           "System.Composition.AttributedModel": "9.0.0"
@@ -1456,6 +1533,7 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+<<<<<<< HEAD
       "System.Formats.Nrbf/9.0.0": {
         "type": "package",
         "compile": {
@@ -1472,6 +1550,8 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+=======
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "System.IdentityModel.Tokens.Jwt/8.2.1": {
         "type": "package",
         "dependencies": {
@@ -1489,6 +1569,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "System.Reflection.MetadataLoadContext/7.0.0": {
         "type": "package",
         "compile": {
@@ -1600,6 +1681,8 @@
           }
         }
       },
+=======
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "ShiftMaster.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
@@ -1725,10 +1808,17 @@
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.AspNetCore.OpenApi/10.0.0": {
       "sha512": "0aqIF1t+sA2T62LIeMtXGSiaV7keGQaJnvwwmu+htQdjCaKYARfXAeqp4nHH9y2etpilyZ/tnQzZg4Ilmo/c4Q==",
       "type": "package",
       "path": "microsoft.aspnetcore.openapi/10.0.0",
+=======
+    "Microsoft.AspNetCore.OpenApi/10.0.3": {
+      "sha512": "SAvSrKDgnY5GDjDAngOXxPhUvEKlTU/0zIq8zidqHvh/xnZBPs0Vc4LqwyvnmnafNnyUaivtRABz4K4wodXfSg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.openapi/10.0.3",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1739,7 +1829,11 @@
         "build/Microsoft.AspNetCore.OpenApi.targets",
         "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll",
         "lib/net10.0/Microsoft.AspNetCore.OpenApi.xml",
+<<<<<<< HEAD
         "microsoft.aspnetcore.openapi.10.0.0.nupkg.sha512",
+=======
+        "microsoft.aspnetcore.openapi.10.0.3.nupkg.sha512",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "microsoft.aspnetcore.openapi.nuspec"
       ]
     },
@@ -2977,6 +3071,7 @@
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.Extensions.ApiDescription.Server/10.0.0": {
       "sha512": "NCWCGiwRwje8773yzPQhvucYnnfeR+ZoB1VRIrIMp4uaeUNw7jvEPHij3HIbwCDuNCrNcphA00KSAR9yD9qmbg==",
       "type": "package",
@@ -3241,10 +3336,20 @@
       "sha512": "RFYJR7APio/BiqdQunRq6DB+nDB6nc2qhHr77mlvZ0q0BT8PubMXN7XicmfzCbrDE/dzhBnUKBRXLTcqUiZDGg==",
       "type": "package",
       "path": "microsoft.extensions.dependencymodel/10.0.0",
+=======
+    "Microsoft.Extensions.DependencyModel/8.0.2": {
+      "sha512": "mUBDZZRgZrSyFOsJ2qJJ9fXfqd/kXJwf3AiDoqLD9m6TjY5OO/vLNOb9fb4juC0487eq4hcGN/M2Rh/CKS7QYw==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencymodel/8.0.2",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
+<<<<<<< HEAD
+=======
+        "LICENSE.TXT",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/Microsoft.Extensions.DependencyModel.targets",
@@ -3408,6 +3513,7 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.NET.StringTools/17.14.28": {
       "sha512": "DMIeWDlxe0Wz0DIhJZ2FMoGQAN2yrGZOi5jjFhRYHWR5ONd0CS6IpAHlRnA7uA/5BF+BADvgsETxW2XrPiFc1A==",
       "type": "package",
@@ -3441,6 +3547,12 @@
       "sha512": "u7QhXCISMQuab3flasb1hoaiERmUqyWsW7tmQODyILoQ7mJV5IRGM+2KKZYo0QUfC13evEOcHAb6TPWgqEQtrw==",
       "type": "package",
       "path": "microsoft.openapi/2.4.1",
+=======
+    "Microsoft.OpenApi/2.0.0": {
+      "sha512": "GGYLfzV/G/ct80OZ45JxnWP7NvMX1BCugn/lX7TH5o0lcVaviavsLMTxmFV2AybXWjbi3h6FF1vgZiTK6PXndw==",
+      "type": "package",
+      "path": "microsoft.openapi/2.0.0",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3451,7 +3563,11 @@
         "lib/netstandard2.0/Microsoft.OpenApi.dll",
         "lib/netstandard2.0/Microsoft.OpenApi.pdb",
         "lib/netstandard2.0/Microsoft.OpenApi.xml",
+<<<<<<< HEAD
         "microsoft.openapi.2.4.1.nupkg.sha512",
+=======
+        "microsoft.openapi.2.0.0.nupkg.sha512",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "microsoft.openapi.nuspec"
       ]
     },
@@ -3551,6 +3667,25 @@
         "lib/netstandard2.0/RabbitMQ.Client.xml",
         "rabbitmq.client.6.8.1.nupkg.sha512",
         "rabbitmq.client.nuspec"
+      ]
+    },
+    "Scalar.AspNetCore/2.12.50": {
+      "sha512": "VjP0hDqICp70OuDtasziehQfs3t2TuhlXfWoOgc5H06iiYLAajclEjfrNDqqD2CTxBPMoU243BXmEphCRF/QTQ==",
+      "type": "package",
+      "path": "scalar.aspnetcore/2.12.50",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/Scalar.AspNetCore.dll",
+        "lib/net10.0/Scalar.AspNetCore.xml",
+        "lib/net8.0/Scalar.AspNetCore.dll",
+        "lib/net8.0/Scalar.AspNetCore.xml",
+        "lib/net9.0/Scalar.AspNetCore.dll",
+        "lib/net9.0/Scalar.AspNetCore.xml",
+        "scalar.aspnetcore.2.12.50.nupkg.sha512",
+        "scalar.aspnetcore.nuspec"
       ]
     },
     "Serilog/3.1.1": {
@@ -3775,6 +3910,7 @@
         "serilog.sinks.file.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Swashbuckle.AspNetCore/10.1.4": {
       "sha512": "3y9YcUdzND3E21NiGvhxEVw2/rdQSbSLDOxrAMP96ZCaDVeB8b30L8QeWA9cfkxfyeXt+F2t1umKE0kaPxm4FA==",
       "type": "package",
@@ -3882,6 +4018,31 @@
     },
     "System.Composition/9.0.0": {
       "sha512": "3Djj70fFTraOarSKmRnmRy/zm4YurICm+kiCtI0dYRqGJnLX6nJ+G3WYuFJ173cAPax/gh96REcbNiVqcrypFQ==",
+=======
+    "System.CodeDom/4.4.0": {
+      "sha512": "2sCCb7doXEwtYAbqzbF/8UAeDRMNmPaQbU2q50Psg1J9KzumyVVCgKQY8s53WIPTufNT0DpSe9QRvVjOzfDWBA==",
+      "type": "package",
+      "path": "system.codedom/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.CodeDom.dll",
+        "lib/netstandard2.0/System.CodeDom.dll",
+        "ref/net461/System.CodeDom.dll",
+        "ref/net461/System.CodeDom.xml",
+        "ref/netstandard2.0/System.CodeDom.dll",
+        "ref/netstandard2.0/System.CodeDom.xml",
+        "system.codedom.4.4.0.nupkg.sha512",
+        "system.codedom.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Composition/6.0.0": {
+      "sha512": "d7wMuKQtfsxUa7S13tITC8n1cQzewuhD5iDjZtK2prwFfKVzdYtgrTHgjaV03Zq7feGQ5gkP85tJJntXwInsJA==",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "type": "package",
       "path": "system.composition/9.0.0",
       "files": [
@@ -4043,6 +4204,7 @@
         "useSharedDesignerContext.txt"
       ]
     },
+<<<<<<< HEAD
     "System.Configuration.ConfigurationManager/9.0.0": {
       "sha512": "PdkuMrwDhXoKFo/JxISIi9E8L+QGn9Iquj2OKDWHB6Y/HnUOuBouF7uS3R4Hw3FoNmwwMo6hWgazQdyHIIs27A==",
       "type": "package",
@@ -4099,6 +4261,8 @@
         "useSharedDesignerContext.txt"
       ]
     },
+=======
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
     "System.IdentityModel.Tokens.Jwt/8.2.1": {
       "sha512": "GVQmbjr2N8awFWPTWyThLxgKnFINObG1P+oX7vFrBY8um3V7V7Dh3wnxaGxNH6v6lSTeVQrY+SaUUBX9H3TPcw==",
       "type": "package",
@@ -4123,6 +4287,7 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
+<<<<<<< HEAD
     "System.Reflection.MetadataLoadContext/7.0.0": {
       "sha512": "z9PvtMJra5hK8n+g0wmPtaG7HQRZpTmIPRw5Z0LEemlcdQMHuTD5D7OAY/fZuuz1L9db++QOcDF0gJTLpbMtZQ==",
       "type": "package",
@@ -4296,6 +4461,8 @@
         "useSharedDesignerContext.txt"
       ]
     },
+=======
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
     "ShiftMaster.Shared/1.0.0": {
       "type": "project",
       "path": "../ShiftMaster.Shared/ShiftMaster.Shared.csproj",
@@ -4306,44 +4473,84 @@
     "net10.0": [
       "AspNetCore.HealthChecks.NpgSql >= 8.0.2",
       "FluentValidation.AspNetCore >= 11.3.0",
+<<<<<<< HEAD
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 10.0.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.0",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 10.0.0",
+=======
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.11",
+      "Microsoft.AspNetCore.OpenApi >= 10.0.3",
+      "Microsoft.EntityFrameworkCore.Design >= 8.0.11",
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 8.0.11",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "RabbitMQ.Client >= 6.8.1",
+      "Scalar.AspNetCore >= 2.12.50",
       "Serilog.AspNetCore >= 8.0.3",
       "ShiftMaster.Shared >= 1.0.0",
+<<<<<<< HEAD
       "Swashbuckle.AspNetCore >= 10.1.4",
+=======
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "System.IdentityModel.Tokens.Jwt >= 8.2.1"
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\saLMa.essbai\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\IMANE.OUARY\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Absence.Service\\ShiftMaster.Absence.Service.csproj",
       "projectName": "ShiftMaster.Absence.Service",
       "projectPath": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Absence.Service\\ShiftMaster.Absence.Service.csproj",
       "packagesPath": "C:\\Users\\saLMa.essbai\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Absence.Service\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Absence.Service\\ShiftMaster.Absence.Service.csproj",
+      "projectName": "ShiftMaster.Absence.Service",
+      "projectPath": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Absence.Service\\ShiftMaster.Absence.Service.csproj",
+      "packagesPath": "C:\\Users\\IMANE.OUARY\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Absence.Service\\obj\\",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\saLMa.essbai\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+        "C:\\Users\\IMANE.OUARY\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Shared\\ShiftMaster.Shared.csproj": {
               "projectPath": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Shared\\ShiftMaster.Shared.csproj"
+=======
+            "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Shared\\ShiftMaster.Shared.csproj": {
+              "projectPath": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Shared\\ShiftMaster.Shared.csproj"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
             }
           }
         }
@@ -4358,7 +4565,11 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
+<<<<<<< HEAD
       "SdkAnalysisLevel": "10.0.100"
+=======
+      "SdkAnalysisLevel": "10.0.200"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
     },
     "frameworks": {
       "net10.0": {
@@ -4378,7 +4589,11 @@
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
+<<<<<<< HEAD
             "version": "[10.0.0, )"
+=======
+            "version": "[10.0.3, )"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "suppressParent": "All",
@@ -4393,14 +4608,21 @@
             "target": "Package",
             "version": "[6.8.1, )"
           },
+          "Scalar.AspNetCore": {
+            "target": "Package",
+            "version": "[2.12.50, )"
+          },
           "Serilog.AspNetCore": {
             "target": "Package",
             "version": "[8.0.3, )"
           },
+<<<<<<< HEAD
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[10.1.4, )"
           },
+=======
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",
             "version": "[8.2.1, )"
@@ -4425,7 +4647,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119/PortableRuntimeIdentifierGraph.json",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

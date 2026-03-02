@@ -2,6 +2,7 @@
   "version": 3,
   "targets": {
     "net10.0": {
+<<<<<<< HEAD
       "ClosedXML/0.104.2": {
         "type": "package",
         "dependencies": {
@@ -26,10 +27,20 @@
         "type": "package",
         "compile": {
           "lib/netstandard2.1/ClosedXML.Parser.dll": {
+=======
+      "Microsoft.AspNetCore.OpenApi/10.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.OpenApi": "2.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
             "related": ".xml"
           }
         },
         "runtime": {
+<<<<<<< HEAD
           "lib/netstandard2.1/ClosedXML.Parser.dll": {
             "related": ".xml"
           }
@@ -91,6 +102,8 @@
           }
         },
         "runtime": {
+=======
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
           "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
             "related": ".xml"
           }
@@ -98,6 +111,7 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ],
+<<<<<<< HEAD
         "build": {
           "build/Microsoft.AspNetCore.OpenApi.targets": {}
         }
@@ -156,16 +170,17 @@
       },
       "Microsoft.Extensions.ApiDescription.Server/10.0.0": {
         "type": "package",
+=======
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "build": {
-          "build/Microsoft.Extensions.ApiDescription.Server.props": {},
-          "build/Microsoft.Extensions.ApiDescription.Server.targets": {}
-        },
-        "buildMultiTargeting": {
-          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props": {},
-          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
+          "build/Microsoft.AspNetCore.OpenApi.targets": {}
         }
       },
+<<<<<<< HEAD
       "Microsoft.OpenApi/2.4.1": {
+=======
+      "Microsoft.OpenApi/2.0.0": {
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "type": "package",
         "compile": {
           "lib/net8.0/Microsoft.OpenApi.dll": {
@@ -178,6 +193,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "Npgsql/10.0.0": {
         "type": "package",
         "compile": {
@@ -295,6 +311,18 @@
         "runtime": {
           "lib/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
             "related": ".pdb;.xml"
+=======
+      "Scalar.AspNetCore/2.12.50": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
           }
         },
         "frameworkReferences": [
@@ -320,6 +348,7 @@
     }
   },
   "libraries": {
+<<<<<<< HEAD
     "ClosedXML/0.104.2": {
       "sha512": "gOkSjQ152MhpKmw70cBkJV+FnaZAWzDwM36luRf/7FlWYnNeH++9XYdGTd0Y4KQlVPkKVxy948M5MMsnsGC4GQ==",
       "type": "package",
@@ -424,6 +453,12 @@
       "sha512": "0aqIF1t+sA2T62LIeMtXGSiaV7keGQaJnvwwmu+htQdjCaKYARfXAeqp4nHH9y2etpilyZ/tnQzZg4Ilmo/c4Q==",
       "type": "package",
       "path": "microsoft.aspnetcore.openapi/10.0.0",
+=======
+    "Microsoft.AspNetCore.OpenApi/10.0.3": {
+      "sha512": "SAvSrKDgnY5GDjDAngOXxPhUvEKlTU/0zIq8zidqHvh/xnZBPs0Vc4LqwyvnmnafNnyUaivtRABz4K4wodXfSg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.openapi/10.0.3",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -434,6 +469,7 @@
         "build/Microsoft.AspNetCore.OpenApi.targets",
         "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll",
         "lib/net10.0/Microsoft.AspNetCore.OpenApi.xml",
+<<<<<<< HEAD
         "microsoft.aspnetcore.openapi.10.0.0.nupkg.sha512",
         "microsoft.aspnetcore.openapi.nuspec"
       ]
@@ -762,6 +798,16 @@
       "sha512": "u7QhXCISMQuab3flasb1hoaiERmUqyWsW7tmQODyILoQ7mJV5IRGM+2KKZYo0QUfC13evEOcHAb6TPWgqEQtrw==",
       "type": "package",
       "path": "microsoft.openapi/2.4.1",
+=======
+        "microsoft.aspnetcore.openapi.10.0.3.nupkg.sha512",
+        "microsoft.aspnetcore.openapi.nuspec"
+      ]
+    },
+    "Microsoft.OpenApi/2.0.0": {
+      "sha512": "GGYLfzV/G/ct80OZ45JxnWP7NvMX1BCugn/lX7TH5o0lcVaviavsLMTxmFV2AybXWjbi3h6FF1vgZiTK6PXndw==",
+      "type": "package",
+      "path": "microsoft.openapi/2.0.0",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -772,6 +818,7 @@
         "lib/netstandard2.0/Microsoft.OpenApi.dll",
         "lib/netstandard2.0/Microsoft.OpenApi.pdb",
         "lib/netstandard2.0/Microsoft.OpenApi.xml",
+<<<<<<< HEAD
         "microsoft.openapi.2.4.1.nupkg.sha512",
         "microsoft.openapi.nuspec"
       ]
@@ -921,6 +968,29 @@
         "package-readme.md",
         "swashbuckle.aspnetcore.swaggerui.10.1.4.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
+=======
+        "microsoft.openapi.2.0.0.nupkg.sha512",
+        "microsoft.openapi.nuspec"
+      ]
+    },
+    "Scalar.AspNetCore/2.12.50": {
+      "sha512": "VjP0hDqICp70OuDtasziehQfs3t2TuhlXfWoOgc5H06iiYLAajclEjfrNDqqD2CTxBPMoU243BXmEphCRF/QTQ==",
+      "type": "package",
+      "path": "scalar.aspnetcore/2.12.50",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/Scalar.AspNetCore.dll",
+        "lib/net10.0/Scalar.AspNetCore.xml",
+        "lib/net8.0/Scalar.AspNetCore.dll",
+        "lib/net8.0/Scalar.AspNetCore.xml",
+        "lib/net9.0/Scalar.AspNetCore.dll",
+        "lib/net9.0/Scalar.AspNetCore.xml",
+        "scalar.aspnetcore.2.12.50.nupkg.sha512",
+        "scalar.aspnetcore.nuspec"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       ]
     },
     "System.IO.Packaging/8.0.1": {
@@ -955,6 +1025,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+<<<<<<< HEAD
       "ClosedXML >= 0.104.2",
       "Microsoft.AspNetCore.OpenApi >= 10.0.0",
       "Microsoft.EntityFrameworkCore >= 10.0.0",
@@ -964,23 +1035,51 @@
   },
   "packageFolders": {
     "C:\\Users\\saLMa.essbai\\.nuget\\packages\\": {}
+=======
+      "Microsoft.AspNetCore.OpenApi >= 10.0.3",
+      "Scalar.AspNetCore >= 2.12.50"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\IMANE.OUARY\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Reporting.Service\\ShiftMaster.Reporting.Service.csproj",
       "projectName": "ShiftMaster.Reporting.Service",
       "projectPath": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Reporting.Service\\ShiftMaster.Reporting.Service.csproj",
       "packagesPath": "C:\\Users\\saLMa.essbai\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Reporting.Service\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Reporting.Service\\ShiftMaster.Reporting.Service.csproj",
+      "projectName": "ShiftMaster.Reporting.Service",
+      "projectPath": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Reporting.Service\\ShiftMaster.Reporting.Service.csproj",
+      "packagesPath": "C:\\Users\\IMANE.OUARY\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Reporting.Service\\obj\\",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\saLMa.essbai\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+        "C:\\Users\\IMANE.OUARY\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -999,7 +1098,11 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
+<<<<<<< HEAD
       "SdkAnalysisLevel": "10.0.100"
+=======
+      "SdkAnalysisLevel": "10.0.200"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
     },
     "frameworks": {
       "net10.0": {
@@ -1011,6 +1114,7 @@
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
+<<<<<<< HEAD
             "version": "[10.0.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
@@ -1020,10 +1124,17 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
             "version": "[10.0.0, )"
+=======
+            "version": "[10.0.3, )"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
           },
-          "Swashbuckle.AspNetCore": {
+          "Scalar.AspNetCore": {
             "target": "Package",
+<<<<<<< HEAD
             "version": "[10.1.4, )"
+=======
+            "version": "[2.12.50, )"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
           }
         },
         "imports": [
@@ -1045,7 +1156,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119/PortableRuntimeIdentifierGraph.json",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

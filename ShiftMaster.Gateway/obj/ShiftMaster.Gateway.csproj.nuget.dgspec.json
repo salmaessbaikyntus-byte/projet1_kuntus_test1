@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Gateway\\ShiftMaster.Gateway.csproj": {}
   },
   "projects": {
@@ -12,14 +13,38 @@
         "projectPath": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Gateway\\ShiftMaster.Gateway.csproj",
         "packagesPath": "C:\\Users\\saLMa.essbai\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Gateway\\obj\\",
+=======
+    "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Gateway\\ShiftMaster.Gateway.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Gateway\\ShiftMaster.Gateway.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Gateway\\ShiftMaster.Gateway.csproj",
+        "projectName": "ShiftMaster.Gateway",
+        "projectPath": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Gateway\\ShiftMaster.Gateway.csproj",
+        "packagesPath": "C:\\Users\\IMANE.OUARY\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Gateway\\obj\\",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\saLMa.essbai\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+          "C:\\Users\\IMANE.OUARY\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,7 +63,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
+<<<<<<< HEAD
         "SdkAnalysisLevel": "10.0.100"
+=======
+        "SdkAnalysisLevel": "10.0.200"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       },
       "frameworks": {
         "net10.0": {
@@ -48,9 +77,17 @@
               "target": "Package",
               "version": "[10.0.0, )"
             },
-            "Swashbuckle.AspNetCore": {
+            "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
+<<<<<<< HEAD
               "version": "[10.1.4, )"
+=======
+              "version": "[10.0.3, )"
+            },
+            "Scalar.AspNetCore": {
+              "target": "Package",
+              "version": "[2.12.50, )"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
             },
             "Yarp.ReverseProxy": {
               "target": "Package",
@@ -76,7 +113,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119/PortableRuntimeIdentifierGraph.json",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

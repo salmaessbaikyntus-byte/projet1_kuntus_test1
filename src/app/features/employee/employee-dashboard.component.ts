@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { MOCK_EMPLOYEES } from '../../shared/mock-data';
+import { EquityWidgetComponent } from '../../shared/components/equity-widget/equity-widget.component';
 import { cn } from '../../shared/utils';
 
 @Component({
   selector: 'app-employee-dashboard',
   standalone: true,
+  imports: [EquityWidgetComponent],
   template: `
     <div class="space-y-8">
       <div class="flex items-center justify-between">
@@ -32,13 +34,11 @@ import { cn } from '../../shared/utils';
             <span class="text-xs text-slate-400 font-bold mb-1.5">Remaining</span>
           </div>
         </div>
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
-          <h3 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Equity Score</h3>
+        <div class="bg-slate-900/40 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 shadow-lg shadow-slate-900/20">
+          <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Equity Score</h3>
           <div class="flex items-center gap-4">
-            <div class="relative w-12 h-12 flex items-center justify-center">
-              <span class="text-2xl font-bold text-slate-900">{{ employee.equityScore }}%</span>
-            </div>
-            <span class="text-xs text-emerald-600 font-bold">+5% this month</span>
+            <app-equity-widget [score]="employee.equityScore" />
+            <span class="text-xs text-emerald-400 font-bold">+5% this month</span>
           </div>
         </div>
       </div>

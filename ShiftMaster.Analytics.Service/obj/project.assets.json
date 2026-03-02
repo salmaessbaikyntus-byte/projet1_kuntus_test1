@@ -2,7 +2,11 @@
   "version": 3,
   "targets": {
     "net10.0": {
+<<<<<<< HEAD
       "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.0": {
+=======
+      "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.11": {
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "8.0.1"
@@ -21,7 +25,11 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+<<<<<<< HEAD
       "Microsoft.AspNetCore.OpenApi/10.0.0": {
+=======
+      "Microsoft.AspNetCore.OpenApi/10.0.3": {
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "type": "package",
         "dependencies": {
           "Microsoft.OpenApi": "2.0.0"
@@ -39,6 +47,7 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ],
+<<<<<<< HEAD
         "build": {
           "build/Microsoft.AspNetCore.OpenApi.targets": {}
         }
@@ -52,6 +61,10 @@
         "buildMultiTargeting": {
           "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props": {},
           "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
+=======
+        "build": {
+          "build/Microsoft.AspNetCore.OpenApi.targets": {}
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         }
       },
       "Microsoft.Extensions.DependencyModel/8.0.2": {
@@ -164,7 +177,11 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.OpenApi/2.4.1": {
+=======
+      "Microsoft.OpenApi/2.0.0": {
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "type": "package",
         "compile": {
           "lib/net8.0/Microsoft.OpenApi.dll": {
@@ -189,6 +206,22 @@
             "related": ".xml"
           }
         }
+      },
+      "Scalar.AspNetCore/2.12.50": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Serilog/3.1.1": {
         "type": "package",
@@ -342,6 +375,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "Swashbuckle.AspNetCore/10.1.4": {
         "type": "package",
         "dependencies": {
@@ -408,6 +442,8 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+=======
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "System.IdentityModel.Tokens.Jwt/8.2.1": {
         "type": "package",
         "dependencies": {
@@ -454,10 +490,17 @@
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.AspNetCore.OpenApi/10.0.0": {
       "sha512": "0aqIF1t+sA2T62LIeMtXGSiaV7keGQaJnvwwmu+htQdjCaKYARfXAeqp4nHH9y2etpilyZ/tnQzZg4Ilmo/c4Q==",
       "type": "package",
       "path": "microsoft.aspnetcore.openapi/10.0.0",
+=======
+    "Microsoft.AspNetCore.OpenApi/10.0.3": {
+      "sha512": "SAvSrKDgnY5GDjDAngOXxPhUvEKlTU/0zIq8zidqHvh/xnZBPs0Vc4LqwyvnmnafNnyUaivtRABz4K4wodXfSg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.openapi/10.0.3",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -468,6 +511,7 @@
         "build/Microsoft.AspNetCore.OpenApi.targets",
         "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll",
         "lib/net10.0/Microsoft.AspNetCore.OpenApi.xml",
+<<<<<<< HEAD
         "microsoft.aspnetcore.openapi.10.0.0.nupkg.sha512",
         "microsoft.aspnetcore.openapi.nuspec"
       ]
@@ -732,6 +776,12 @@
         "tools/net462/netstandard.dll"
       ]
     },
+=======
+        "microsoft.aspnetcore.openapi.10.0.3.nupkg.sha512",
+        "microsoft.aspnetcore.openapi.nuspec"
+      ]
+    },
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
     "Microsoft.Extensions.DependencyModel/8.0.2": {
       "sha512": "mUBDZZRgZrSyFOsJ2qJJ9fXfqd/kXJwf3AiDoqLD9m6TjY5OO/vLNOb9fb4juC0487eq4hcGN/M2Rh/CKS7QYw==",
       "type": "package",
@@ -904,10 +954,17 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.OpenApi/2.4.1": {
       "sha512": "u7QhXCISMQuab3flasb1hoaiERmUqyWsW7tmQODyILoQ7mJV5IRGM+2KKZYo0QUfC13evEOcHAb6TPWgqEQtrw==",
       "type": "package",
       "path": "microsoft.openapi/2.4.1",
+=======
+    "Microsoft.OpenApi/2.0.0": {
+      "sha512": "GGYLfzV/G/ct80OZ45JxnWP7NvMX1BCugn/lX7TH5o0lcVaviavsLMTxmFV2AybXWjbi3h6FF1vgZiTK6PXndw==",
+      "type": "package",
+      "path": "microsoft.openapi/2.0.0",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -918,7 +975,11 @@
         "lib/netstandard2.0/Microsoft.OpenApi.dll",
         "lib/netstandard2.0/Microsoft.OpenApi.pdb",
         "lib/netstandard2.0/Microsoft.OpenApi.xml",
+<<<<<<< HEAD
         "microsoft.openapi.2.4.1.nupkg.sha512",
+=======
+        "microsoft.openapi.2.0.0.nupkg.sha512",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "microsoft.openapi.nuspec"
       ]
     },
@@ -937,6 +998,25 @@
         "lib/netstandard2.0/RabbitMQ.Client.xml",
         "rabbitmq.client.6.8.1.nupkg.sha512",
         "rabbitmq.client.nuspec"
+      ]
+    },
+    "Scalar.AspNetCore/2.12.50": {
+      "sha512": "VjP0hDqICp70OuDtasziehQfs3t2TuhlXfWoOgc5H06iiYLAajclEjfrNDqqD2CTxBPMoU243BXmEphCRF/QTQ==",
+      "type": "package",
+      "path": "scalar.aspnetcore/2.12.50",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/Scalar.AspNetCore.dll",
+        "lib/net10.0/Scalar.AspNetCore.xml",
+        "lib/net8.0/Scalar.AspNetCore.dll",
+        "lib/net8.0/Scalar.AspNetCore.xml",
+        "lib/net9.0/Scalar.AspNetCore.dll",
+        "lib/net9.0/Scalar.AspNetCore.xml",
+        "scalar.aspnetcore.2.12.50.nupkg.sha512",
+        "scalar.aspnetcore.nuspec"
       ]
     },
     "Serilog/3.1.1": {
@@ -1161,6 +1241,7 @@
         "serilog.sinks.file.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Swashbuckle.AspNetCore/10.1.4": {
       "sha512": "3y9YcUdzND3E21NiGvhxEVw2/rdQSbSLDOxrAMP96ZCaDVeB8b30L8QeWA9cfkxfyeXt+F2t1umKE0kaPxm4FA==",
       "type": "package",
@@ -1238,6 +1319,8 @@
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
+=======
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
     "System.IdentityModel.Tokens.Jwt/8.2.1": {
       "sha512": "GVQmbjr2N8awFWPTWyThLxgKnFINObG1P+oX7vFrBY8um3V7V7Dh3wnxaGxNH6v6lSTeVQrY+SaUUBX9H3TPcw==",
       "type": "package",
@@ -1270,42 +1353,80 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+<<<<<<< HEAD
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 10.0.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.0",
+=======
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.11",
+      "Microsoft.AspNetCore.OpenApi >= 10.0.3",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "RabbitMQ.Client >= 6.8.1",
+      "Scalar.AspNetCore >= 2.12.50",
       "Serilog.AspNetCore >= 8.0.3",
       "ShiftMaster.Shared >= 1.0.0",
+<<<<<<< HEAD
       "Swashbuckle.AspNetCore >= 10.1.4",
+=======
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "System.IdentityModel.Tokens.Jwt >= 8.2.1"
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\saLMa.essbai\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\IMANE.OUARY\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Analytics.Service\\ShiftMaster.Analytics.Service.csproj",
       "projectName": "ShiftMaster.Analytics.Service",
       "projectPath": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Analytics.Service\\ShiftMaster.Analytics.Service.csproj",
       "packagesPath": "C:\\Users\\saLMa.essbai\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Analytics.Service\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Analytics.Service\\ShiftMaster.Analytics.Service.csproj",
+      "projectName": "ShiftMaster.Analytics.Service",
+      "projectPath": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Analytics.Service\\ShiftMaster.Analytics.Service.csproj",
+      "packagesPath": "C:\\Users\\IMANE.OUARY\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Analytics.Service\\obj\\",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\saLMa.essbai\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+        "C:\\Users\\IMANE.OUARY\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Shared\\ShiftMaster.Shared.csproj": {
               "projectPath": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Shared\\ShiftMaster.Shared.csproj"
+=======
+            "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Shared\\ShiftMaster.Shared.csproj": {
+              "projectPath": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Shared\\ShiftMaster.Shared.csproj"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
             }
           }
         }
@@ -1320,7 +1441,11 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
+<<<<<<< HEAD
       "SdkAnalysisLevel": "10.0.100"
+=======
+      "SdkAnalysisLevel": "10.0.200"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
     },
     "frameworks": {
       "net10.0": {
@@ -1332,20 +1457,31 @@
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
+<<<<<<< HEAD
             "version": "[10.0.0, )"
+=======
+            "version": "[10.0.3, )"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
           },
           "RabbitMQ.Client": {
             "target": "Package",
             "version": "[6.8.1, )"
           },
+          "Scalar.AspNetCore": {
+            "target": "Package",
+            "version": "[2.12.50, )"
+          },
           "Serilog.AspNetCore": {
             "target": "Package",
             "version": "[8.0.3, )"
           },
+<<<<<<< HEAD
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[10.1.4, )"
           },
+=======
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",
             "version": "[8.2.1, )"
@@ -1370,7 +1506,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119/PortableRuntimeIdentifierGraph.json",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

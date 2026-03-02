@@ -9,6 +9,7 @@ C:\Users\Pc\Downloads\shiftmaster-enterprise TEST1\ShiftMaster.Shared\obj\Debug\
 C:\Users\Pc\Downloads\shiftmaster-enterprise TEST1\ShiftMaster.Shared\obj\Debug\net8.0\refint\ShiftMaster.Shared.dll
 C:\Users\Pc\Downloads\shiftmaster-enterprise TEST1\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.pdb
 C:\Users\Pc\Downloads\shiftmaster-enterprise TEST1\ShiftMaster.Shared\obj\Debug\net8.0\ref\ShiftMaster.Shared.dll
+<<<<<<< HEAD
 C:\Users\saLMa.essbai\shiftmaster-enterprise-TEST1\ShiftMaster.Shared\bin\Debug\net8.0\ShiftMaster.Shared.deps.json
 C:\Users\saLMa.essbai\shiftmaster-enterprise-TEST1\ShiftMaster.Shared\bin\Debug\net8.0\ShiftMaster.Shared.dll
 C:\Users\saLMa.essbai\shiftmaster-enterprise-TEST1\ShiftMaster.Shared\bin\Debug\net8.0\ShiftMaster.Shared.pdb
@@ -21,3 +22,17 @@ C:\Users\saLMa.essbai\shiftmaster-enterprise-TEST1\ShiftMaster.Shared\obj\Debug\
 C:\Users\saLMa.essbai\shiftmaster-enterprise-TEST1\ShiftMaster.Shared\obj\Debug\net8.0\refint\ShiftMaster.Shared.dll
 C:\Users\saLMa.essbai\shiftmaster-enterprise-TEST1\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.pdb
 C:\Users\saLMa.essbai\shiftmaster-enterprise-TEST1\ShiftMaster.Shared\obj\Debug\net8.0\ref\ShiftMaster.Shared.dll
+=======
+C:\Users\IMANE.OUARY\Documents\projet1_kuntus_test1\ShiftMaster.Shared\bin\Debug\net8.0\ShiftMaster.Shared.deps.json
+C:\Users\IMANE.OUARY\Documents\projet1_kuntus_test1\ShiftMaster.Shared\bin\Debug\net8.0\ShiftMaster.Shared.dll
+C:\Users\IMANE.OUARY\Documents\projet1_kuntus_test1\ShiftMaster.Shared\bin\Debug\net8.0\ShiftMaster.Shared.pdb
+C:\Users\IMANE.OUARY\Documents\projet1_kuntus_test1\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IMANE.OUARY\Documents\projet1_kuntus_test1\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.AssemblyInfoInputs.cache
+C:\Users\IMANE.OUARY\Documents\projet1_kuntus_test1\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.AssemblyInfo.cs
+C:\Users\IMANE.OUARY\Documents\projet1_kuntus_test1\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.csproj.CoreCompileInputs.cache
+C:\Users\IMANE.OUARY\Documents\projet1_kuntus_test1\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.sourcelink.json
+C:\Users\IMANE.OUARY\Documents\projet1_kuntus_test1\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.dll
+C:\Users\IMANE.OUARY\Documents\projet1_kuntus_test1\ShiftMaster.Shared\obj\Debug\net8.0\refint\ShiftMaster.Shared.dll
+C:\Users\IMANE.OUARY\Documents\projet1_kuntus_test1\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.pdb
+C:\Users\IMANE.OUARY\Documents\projet1_kuntus_test1\ShiftMaster.Shared\obj\Debug\net8.0\ref\ShiftMaster.Shared.dll
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b

@@ -2,7 +2,11 @@
   "version": 3,
   "targets": {
     "net10.0": {
+<<<<<<< HEAD
       "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.0": {
+=======
+      "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.11": {
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "8.0.1"
@@ -21,15 +25,30 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+<<<<<<< HEAD
       "Microsoft.Extensions.ApiDescription.Server/10.0.0": {
+=======
+      "Microsoft.AspNetCore.OpenApi/10.0.3": {
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "type": "package",
-        "build": {
-          "build/Microsoft.Extensions.ApiDescription.Server.props": {},
-          "build/Microsoft.Extensions.ApiDescription.Server.targets": {}
+        "dependencies": {
+          "Microsoft.OpenApi": "2.0.0"
         },
-        "buildMultiTargeting": {
-          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props": {},
-          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
+        "compile": {
+          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "build": {
+          "build/Microsoft.AspNetCore.OpenApi.targets": {}
         }
       },
       "Microsoft.IdentityModel.Abstractions/8.0.1": {
@@ -126,7 +145,11 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.OpenApi/2.4.1": {
+=======
+      "Microsoft.OpenApi/2.0.0": {
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "type": "package",
         "compile": {
           "lib/net8.0/Microsoft.OpenApi.dll": {
@@ -139,6 +162,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "Swashbuckle.AspNetCore/10.1.4": {
         "type": "package",
         "dependencies": {
@@ -199,6 +223,18 @@
         "runtime": {
           "lib/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
             "related": ".pdb;.xml"
+=======
+      "Scalar.AspNetCore/2.12.50": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
           }
         },
         "frameworkReferences": [
@@ -276,15 +312,23 @@
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.Extensions.ApiDescription.Server/10.0.0": {
       "sha512": "NCWCGiwRwje8773yzPQhvucYnnfeR+ZoB1VRIrIMp4uaeUNw7jvEPHij3HIbwCDuNCrNcphA00KSAR9yD9qmbg==",
       "type": "package",
       "path": "microsoft.extensions.apidescription.server/10.0.0",
       "hasTools": true,
+=======
+    "Microsoft.AspNetCore.OpenApi/10.0.3": {
+      "sha512": "SAvSrKDgnY5GDjDAngOXxPhUvEKlTU/0zIq8zidqHvh/xnZBPs0Vc4LqwyvnmnafNnyUaivtRABz4K4wodXfSg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.openapi/10.0.3",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
+<<<<<<< HEAD
         "build/Microsoft.Extensions.ApiDescription.Server.props",
         "build/Microsoft.Extensions.ApiDescription.Server.targets",
         "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props",
@@ -534,6 +578,16 @@
         "tools/net462/System.Xml.XmlDocument.dll",
         "tools/net462/System.Xml.XmlSerializer.dll",
         "tools/net462/netstandard.dll"
+=======
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/cs/Microsoft.AspNetCore.OpenApi.SourceGenerators.dll",
+        "build/Microsoft.AspNetCore.OpenApi.targets",
+        "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll",
+        "lib/net10.0/Microsoft.AspNetCore.OpenApi.xml",
+        "microsoft.aspnetcore.openapi.10.0.3.nupkg.sha512",
+        "microsoft.aspnetcore.openapi.nuspec"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       ]
     },
     "Microsoft.IdentityModel.Abstractions/8.0.1": {
@@ -674,10 +728,17 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.OpenApi/2.4.1": {
       "sha512": "u7QhXCISMQuab3flasb1hoaiERmUqyWsW7tmQODyILoQ7mJV5IRGM+2KKZYo0QUfC13evEOcHAb6TPWgqEQtrw==",
       "type": "package",
       "path": "microsoft.openapi/2.4.1",
+=======
+    "Microsoft.OpenApi/2.0.0": {
+      "sha512": "GGYLfzV/G/ct80OZ45JxnWP7NvMX1BCugn/lX7TH5o0lcVaviavsLMTxmFV2AybXWjbi3h6FF1vgZiTK6PXndw==",
+      "type": "package",
+      "path": "microsoft.openapi/2.0.0",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -688,6 +749,7 @@
         "lib/netstandard2.0/Microsoft.OpenApi.dll",
         "lib/netstandard2.0/Microsoft.OpenApi.pdb",
         "lib/netstandard2.0/Microsoft.OpenApi.xml",
+<<<<<<< HEAD
         "microsoft.openapi.2.4.1.nupkg.sha512",
         "microsoft.openapi.nuspec"
       ]
@@ -767,6 +829,29 @@
         "package-readme.md",
         "swashbuckle.aspnetcore.swaggerui.10.1.4.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
+=======
+        "microsoft.openapi.2.0.0.nupkg.sha512",
+        "microsoft.openapi.nuspec"
+      ]
+    },
+    "Scalar.AspNetCore/2.12.50": {
+      "sha512": "VjP0hDqICp70OuDtasziehQfs3t2TuhlXfWoOgc5H06iiYLAajclEjfrNDqqD2CTxBPMoU243BXmEphCRF/QTQ==",
+      "type": "package",
+      "path": "scalar.aspnetcore/2.12.50",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/Scalar.AspNetCore.dll",
+        "lib/net10.0/Scalar.AspNetCore.xml",
+        "lib/net8.0/Scalar.AspNetCore.dll",
+        "lib/net8.0/Scalar.AspNetCore.xml",
+        "lib/net9.0/Scalar.AspNetCore.dll",
+        "lib/net9.0/Scalar.AspNetCore.xml",
+        "scalar.aspnetcore.2.12.50.nupkg.sha512",
+        "scalar.aspnetcore.nuspec"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       ]
     },
     "System.IdentityModel.Tokens.Jwt/8.0.1": {
@@ -844,30 +929,60 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+<<<<<<< HEAD
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 10.0.0",
       "Swashbuckle.AspNetCore >= 10.1.4",
+=======
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.11",
+      "Microsoft.AspNetCore.OpenApi >= 10.0.3",
+      "Scalar.AspNetCore >= 2.12.50",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "Yarp.ReverseProxy >= 2.2.0"
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\saLMa.essbai\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\IMANE.OUARY\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Gateway\\ShiftMaster.Gateway.csproj",
       "projectName": "ShiftMaster.Gateway",
       "projectPath": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Gateway\\ShiftMaster.Gateway.csproj",
       "packagesPath": "C:\\Users\\saLMa.essbai\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Gateway\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Gateway\\ShiftMaster.Gateway.csproj",
+      "projectName": "ShiftMaster.Gateway",
+      "projectPath": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Gateway\\ShiftMaster.Gateway.csproj",
+      "packagesPath": "C:\\Users\\IMANE.OUARY\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Gateway\\obj\\",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\saLMa.essbai\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+        "C:\\Users\\IMANE.OUARY\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -886,7 +1001,11 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
+<<<<<<< HEAD
       "SdkAnalysisLevel": "10.0.100"
+=======
+      "SdkAnalysisLevel": "10.0.200"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
     },
     "frameworks": {
       "net10.0": {
@@ -896,9 +1015,17 @@
             "target": "Package",
             "version": "[10.0.0, )"
           },
-          "Swashbuckle.AspNetCore": {
+          "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
+<<<<<<< HEAD
             "version": "[10.1.4, )"
+=======
+            "version": "[10.0.3, )"
+          },
+          "Scalar.AspNetCore": {
+            "target": "Package",
+            "version": "[2.12.50, )"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
           },
           "Yarp.ReverseProxy": {
             "target": "Package",
@@ -924,7 +1051,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200-preview.0.26103.119/PortableRuntimeIdentifierGraph.json",
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

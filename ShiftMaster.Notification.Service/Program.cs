@@ -2,6 +2,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Scalar.AspNetCore;
 using Serilog;
 using ShiftMaster.Notification.Service.Application.Interfaces;
 using ShiftMaster.Notification.Service.Application.Services;
@@ -11,8 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog((c, lc) => lc.WriteTo.Console());
 
 builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c => c.SwaggerDoc("v1", new() { Title = "ShiftMaster Notification API", Version = "v1" }));
+builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<NotificationDbContext>(o => o.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -36,7 +36,9 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
     await scope.ServiceProvider.GetRequiredService<NotificationDbContext>().Database.EnsureCreatedAsync();
 
-if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); }
+app.MapOpenApi();
+if (app.Environment.IsDevelopment())
+    app.MapScalarApiReference();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();

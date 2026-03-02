@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 import { Component, signal, computed, effect, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
 import { AuthApiService } from '../services/auth-api.service';
 import { ThemeService } from '../services/theme.service';
+=======
+import { Component, signal, computed, effect, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from '../auth/auth.service';
+import { NotificationSignalService } from '../services/notification-signal.service';
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
 import { Role } from '../../shared/types';
 import { cn } from '../../shared/utils';
 
@@ -100,7 +108,9 @@ interface NavItem {
             </div>
             <button class="relative p-2 text-slate-500 hover:text-slate-900 dark:hover:text-white">
               <span [innerHTML]="bellIcon"></span>
-              <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+              @if (notificationService.unreadCount() > 0) {
+                <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+              }
             </button>
             <div class="flex items-center gap-3 pl-4 border-l border-slate-200 dark:border-slate-700">
               <div class="text-right hidden sm:block">
@@ -159,6 +169,8 @@ export class MainLayoutComponent implements OnInit {
     const item = this.navigation.find((n) => n.route === url || (url.startsWith(n.route) && n.route !== '/'));
     return item?.name?.replace(' ', '-')?.toLowerCase() ?? 'dashboard';
   });
+
+  readonly notificationService = inject(NotificationSignalService);
 
   constructor(
     public auth: AuthService,

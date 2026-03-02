@@ -9,6 +9,7 @@ using ShiftMaster.Auth.Service.Domain.Entities;
 using ShiftMaster.Auth.Service.Infrastructure.Persistence;
 using ShiftMaster.Auth.Service.API.Filters;
 using FluentValidation;
+using Scalar.AspNetCore;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,11 +24,7 @@ builder.Services.AddControllers(options =>
     options.Filters.Add<CorrelationIdFilter>();
 });
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new() { Title = "ShiftMaster Auth API", Version = "v1" });
-});
+builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<AuthDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -75,11 +72,9 @@ using (var scope = app.Services.CreateScope())
     await DataSeeder.SeedAsync(context, userManager);
 }
 
+app.MapOpenApi();
 if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    app.MapScalarApiReference();
 
 app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();

@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "IBtGfxr2WT4=",
   "success": true,
   "projectFilePath": "C:\\Users\\saLMa.essbai\\shiftmaster-enterprise-TEST1\\ShiftMaster.Reporting.Service\\ShiftMaster.Reporting.Service.csproj",
@@ -25,6 +26,15 @@
     "C:\\Users\\saLMa.essbai\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\10.1.4\\swashbuckle.aspnetcore.swaggergen.10.1.4.nupkg.sha512",
     "C:\\Users\\saLMa.essbai\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\10.1.4\\swashbuckle.aspnetcore.swaggerui.10.1.4.nupkg.sha512",
     "C:\\Users\\saLMa.essbai\\.nuget\\packages\\system.io.packaging\\8.0.1\\system.io.packaging.8.0.1.nupkg.sha512"
+=======
+  "dgSpecHash": "IvKBiN9tUUU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\IMANE.OUARY\\Documents\\projet1_kuntus_test1\\ShiftMaster.Reporting.Service\\ShiftMaster.Reporting.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\IMANE.OUARY\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.3\\microsoft.aspnetcore.openapi.10.0.3.nupkg.sha512",
+    "C:\\Users\\IMANE.OUARY\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\IMANE.OUARY\\.nuget\\packages\\scalar.aspnetcore\\2.12.50\\scalar.aspnetcore.2.12.50.nupkg.sha512"
+>>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
   ],
   "logs": []
 }

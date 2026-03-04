@@ -1,0 +1,46 @@
+{
+  "app": {
+    "name": "ShiftMaster"
+  },
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "approvals": "Approbations",
+    "planning": "Planning",
+    "team": "Équipe",
+    "analytics": "Analytiques",
+    "reporting": "Reporting",
+    "alerts": "Alertes & Risques",
+    "audit": "Journal d'audit",
+    "settings": "Règles métier",
+    "myPortal": "Mon portail",
+    "myPlanning": "Mon planning",
+    "myLeaves": "Mes congés"
+  },
+  "roles": {
+    "manager": "Vue Manager",
+    "rh": "Vue RH",
+    "employee": "Vue Employé",
+    "admin": "Vue Admin",
+    "auditor": "Vue Auditeur"
+  },
+  "layout": {
+    "searchPlaceholder": "Rechercher...",
+    "lightMode": "Mode clair",
+    "darkMode": "Mode sombre",
+    "logout": "Déconnexion"
+  },
+  "login": {
+    "title": "Connexion",
+    "subtitle": "Entrez vos identifiants",
+    "email": "Email",
+    "password": "Mot de passe",
+    "submit": "Se connecter",
+    "submitting": "Connexion...",
+    "demoHint": "Démo : admin@shiftmaster.com / ShiftMaster123!",
+    "errorInvalid": "Identifiants incorrects"
+  },
+  "lang": {
+    "fr": "Français",
+    "en": "English"
+  }
+}

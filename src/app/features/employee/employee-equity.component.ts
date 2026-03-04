@@ -64,7 +64,6 @@ const EQUITY_COMPONENTS = [
       </div>
     </div>
   `,
-  imports: [],
 })
 export class EmployeeEquityComponent {
   employee = MOCK_EMPLOYEES[0];

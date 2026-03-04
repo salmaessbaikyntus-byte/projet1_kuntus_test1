@@ -11,6 +11,7 @@ public class Employee
     public string Email { get; set; } = string.Empty;
     public string JobTitle { get; set; } = string.Empty;
     public string Department { get; set; } = string.Empty;
+    public string? Pole { get; set; }
     public string CellId { get; set; } = string.Empty;
     public string? AvatarUrl { get; set; }
     public string Role { get; set; } = "Employee";

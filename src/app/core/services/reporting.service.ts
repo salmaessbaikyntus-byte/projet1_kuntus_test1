@@ -93,8 +93,8 @@ export class ReportingService {
     return {
       id: r.id,
       name: r.name,
-      category: r.category,
-      reportType: r.reportType,
+      category: r.category as Report['category'],
+      reportType: r.reportType as Report['reportType'],
       periodStart: r.periodStart,
       periodEnd: r.periodEnd,
       author: r.author,

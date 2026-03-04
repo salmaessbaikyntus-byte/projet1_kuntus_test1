@@ -60,7 +60,6 @@ import { cn } from '../../shared/utils';
       </div>
     </div>
   `,
-  imports: [],
 })
 export class EmployeeDashboardComponent {
   employee = MOCK_EMPLOYEES[0];

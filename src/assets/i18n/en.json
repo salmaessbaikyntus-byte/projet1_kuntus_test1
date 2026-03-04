@@ -1,0 +1,46 @@
+{
+  "app": {
+    "name": "ShiftMaster"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "approvals": "Approvals",
+    "planning": "Planning",
+    "team": "Team",
+    "analytics": "Analytics",
+    "reporting": "Reporting",
+    "alerts": "Alerts & Risks",
+    "audit": "Audit Log",
+    "settings": "Business Rules",
+    "myPortal": "My Portal",
+    "myPlanning": "My Planning",
+    "myLeaves": "My Leaves"
+  },
+  "roles": {
+    "manager": "Manager View",
+    "rh": "RH View",
+    "employee": "Employee View",
+    "admin": "Admin View",
+    "auditor": "Auditor View"
+  },
+  "layout": {
+    "searchPlaceholder": "Search anything...",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode",
+    "logout": "Logout"
+  },
+  "login": {
+    "title": "Login",
+    "subtitle": "Enter your credentials",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in",
+    "submitting": "Signing in...",
+    "demoHint": "Demo: admin@shiftmaster.com / ShiftMaster123!",
+    "errorInvalid": "Invalid credentials"
+  },
+  "lang": {
+    "fr": "Français",
+    "en": "English"
+  }
+}

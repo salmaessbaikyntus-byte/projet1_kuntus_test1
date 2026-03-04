@@ -27,7 +27,8 @@ public static class DataSeeder
             Email = "alice@shiftmaster.com",
             JobTitle = "Nurse",
             Department = "Emergency",
-            CellId = "cell-emergency-1",
+            Pole = "Pôle client",
+            CellId = "Support Client",
             Role = "EMPLOYEE",
             Status = EmployeeStatus.Active,
             ContractType = ContractType.CDI,
@@ -54,7 +55,8 @@ public static class DataSeeder
             Email = "bob@shiftmaster.com",
             JobTitle = "Nurse",
             Department = "Emergency",
-            CellId = "cell-emergency-1",
+            Pole = "Pôle client",
+            CellId = "Support Client",
             Role = "EMPLOYEE",
             Status = EmployeeStatus.Active,
             ContractType = ContractType.CDI,
@@ -65,6 +67,41 @@ public static class DataSeeder
             Skills = [new EmployeeSkill { Id = Guid.NewGuid(), EmployeeId = bobId, Name = "Pediatrics", Level = 2 }],
             AvailabilitySlots = CreateDefaultAvailability(bobId)
         });
+
+        // Additional employees for realistic list (Pole/Cellule/Department from organisation)
+        var extra = new[]
+        {
+            ("Charlie", "Moreau", "charlie@shiftmaster.com", "Technician", "Radiology", "Pôle client", "Gestion de retards", "ZONE 1", 92, 15),
+            ("Diana", "Rossi", "diana@shiftmaster.com", "Doctor", "Emergency", "Pôle sécurisation", "Support VIP", null, 88, 5),
+            ("Eve", "Petit", "eve@shiftmaster.com", "Nurse", "Emergency", "Pôle client", "Satisfaction Client", null, 82, 10),
+            ("Frank", "Martin", "frank@shiftmaster.com", "Agent", "Support", "Pôle client", "Support Client", null, 75, 12),
+            ("Grace", "Bernard", "grace@shiftmaster.com", "Agent", "Support", "Pôle sécurisation", "Cibles prioritaires", null, 79, 8),
+        };
+        foreach (var (fn, ln, email, job, dept, pole, cellule, dep, equity, leave) in extra)
+        {
+            var eid = Guid.NewGuid();
+            context.Employees.Add(new EmployeeEntity
+            {
+                Id = eid,
+                UserId = Guid.NewGuid().ToString(),
+                FirstName = fn,
+                LastName = ln,
+                Email = email,
+                JobTitle = job,
+                Department = dept ?? cellule,
+                Pole = pole,
+                CellId = cellule,
+                Role = "EMPLOYEE",
+                Status = EmployeeStatus.Active,
+                ContractType = ContractType.CDI,
+                Seniority = Seniority.Mid,
+                EquityScore = equity,
+                LeaveBalance = leave,
+                CreatedAt = DateTime.UtcNow,
+                Skills = [new EmployeeSkill { Id = Guid.NewGuid(), EmployeeId = eid, Name = "General", Level = 2 }],
+                AvailabilitySlots = CreateDefaultAvailability(eid)
+            });
+        }
 
         await context.SaveChangesAsync();
     }

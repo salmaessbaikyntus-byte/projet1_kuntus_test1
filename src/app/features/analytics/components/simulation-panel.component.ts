@@ -72,19 +72,19 @@ import { cn } from '../../../shared/utils';
                 <span class="text-slate-400">Impact couverture</span>
                 <p [class]="cn(
                   'font-bold',
-                  (result()!.coverageImpact ?? 0) >= 0 ? 'text-emerald-400' : 'text-red-400'
+                  (result()!.coverageImpact) >= 0 ? 'text-emerald-400' : 'text-red-400'
                 )">
-                  {{ (result()!.coverageImpact ?? 0) >= 0 ? '+' : '' }}{{ result()!.coverageImpact }}%
+                  {{ (result()!.coverageImpact) >= 0 ? '+' : '' }}{{ result()!.coverageImpact }}%
                 </p>
               </div>
               <div class="rounded bg-slate-800 p-2">
                 <span class="text-slate-400">Violations règles</span>
-                <p class="font-bold" [class]="(result()!.ruleViolations ?? 0) > 0 ? 'text-amber-400' : 'text-emerald-400'">
+                <p class="font-bold" [class]="(result()!.ruleViolations) > 0 ? 'text-amber-400' : 'text-emerald-400'">
                   {{ result()!.ruleViolations }}
                 </p>
               </div>
             </div>
-            @if ((result()!.alerts?.length ?? 0) > 0) {
+            @if ((result()!.alerts.length ?? 0) > 0) {
               <div class="space-y-1">
                 @for (a of result()!.alerts; track $index) {
                   <div

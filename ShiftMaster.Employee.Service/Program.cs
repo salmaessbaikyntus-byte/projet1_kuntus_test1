@@ -60,6 +60,7 @@ builder.Services.AddHttpClient(nameof(ShiftMaster.Employee.Service.Infrastructur
 builder.Services.AddScoped<IShiftStatisticsProvider, ShiftMaster.Employee.Service.Infrastructure.Planning.HttpShiftStatisticsProvider>();
 builder.Services.AddScoped<IEquityScoreService, EquityScoreService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IOrganisationFilterRepository, OrganisationFilterRepository>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IEventPublisher, RabbitMqEventPublisher>();
 

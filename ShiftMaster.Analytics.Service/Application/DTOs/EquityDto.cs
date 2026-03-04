@@ -11,3 +11,7 @@ public record HeatmapDto(string[] Days, string[] Shifts, decimal[][] Values, dec
 public record SimulateRequestDto(decimal StaffChangePercent, decimal? AbsenteeismRate);
 public record SimulateResultDto(decimal CoverageImpact, int RuleViolations, IReadOnlyList<AlertDto> Alerts);
 public record AlertDto(string Severity, string Message);
+
+public record DashboardAlertDto(string Id, string Type, string Title, string Message, string Priority, string Time, string Team);
+public record RecentActivityDto(string User, string Action, string Target, string Time);
+public record AuditLogDto(string Id, string User, string Action, string Target, string Timestamp, bool IsSensitive);

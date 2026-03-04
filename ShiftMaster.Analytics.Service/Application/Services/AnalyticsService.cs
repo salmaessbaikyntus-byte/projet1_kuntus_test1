@@ -62,4 +62,37 @@ public class AnalyticsService : IAnalyticsService
             : new List<AlertDto>();
         return Task.FromResult(new SimulateResultDto(impact, violations, alerts));
     }
+
+    public Task<IReadOnlyList<DashboardAlertDto>> GetAlertsAsync(CancellationToken ct = default)
+    {
+        var alerts = new List<DashboardAlertDto>
+        {
+            new("1", "Coverage", "Night Shift Understaffed", "Radiology dept needs 2 more staff for Wed.", "P1", "2h ago", "Radiology"),
+            new("2", "Compliance", "Leave Request Conflict", "Alice and Bob requested same dates.", "P2", "4h ago", "Emergency"),
+            new("3", "Equity", "Compliance Warning", "Rule 10% risk for Emergency ward.", "P3", "1d ago", "Emergency")
+        };
+        return Task.FromResult<IReadOnlyList<DashboardAlertDto>>(alerts);
+    }
+
+    public Task<IReadOnlyList<RecentActivityDto>> GetRecentActivityAsync(CancellationToken ct = default)
+    {
+        var activities = new List<RecentActivityDto>
+        {
+            new("Admin", "published planning", "Week 09", "10 min ago"),
+            new("System", "generated report", "Equity Q1", "1h ago"),
+            new("Manager", "approved leave", "Alice Durand", "3h ago")
+        };
+        return Task.FromResult<IReadOnlyList<RecentActivityDto>>(activities);
+    }
+
+    public Task<IReadOnlyList<AuditLogDto>> GetAuditLogAsync(CancellationToken ct = default)
+    {
+        var logs = new List<AuditLogDto>
+        {
+            new("1", "Jean Manager", "Approved Leave", "Alice Durand", "2026-03-01 14:20", false),
+            new("2", "System", "Generated Planning", "Week 10", "2026-03-01 12:00", true),
+            new("3", "Admin", "Modified Business Rule", "Max Break %", "2026-02-28 16:45", true)
+        };
+        return Task.FromResult<IReadOnlyList<AuditLogDto>>(logs);
+    }
 }

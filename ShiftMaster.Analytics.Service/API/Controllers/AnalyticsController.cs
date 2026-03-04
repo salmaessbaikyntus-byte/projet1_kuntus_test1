@@ -47,4 +47,13 @@ public class AnalyticsController : ControllerBase
         var userId = Guid.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out var id) ? id : Guid.Empty;
         return Ok(await _analyticsService.GetTeamRankingAsync(userId, User.FindFirst("cell_id")?.Value, ct));
     }
+
+    [HttpGet("alerts")]
+    public async Task<IActionResult> Alerts(CancellationToken ct) => Ok(await _analyticsService.GetAlertsAsync(ct));
+
+    [HttpGet("recent-activity")]
+    public async Task<IActionResult> RecentActivity(CancellationToken ct) => Ok(await _analyticsService.GetRecentActivityAsync(ct));
+
+    [HttpGet("audit-log")]
+    public async Task<IActionResult> AuditLog(CancellationToken ct) => Ok(await _analyticsService.GetAuditLogAsync(ct));
 }

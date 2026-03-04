@@ -1,7 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PlanningService } from '../../core/services/planning.service';
-import { MOCK_KPIS } from '../../shared/mock-data';
+import { AnalyticsService } from '../../core/services/analytics.service';
 import { cn } from '../../shared/utils';
 
 @Component({
@@ -70,7 +70,7 @@ import { cn } from '../../shared/utils';
                 <span class="text-xs font-bold text-slate-500 uppercase">Coverage</span>
               </div>
               <div class="flex items-end gap-2">
-                <span class="text-2xl font-bold text-slate-900">{{ MOCK_KPIS.coverage }}%</span>
+                <span class="text-2xl font-bold text-slate-900 dark:text-white">{{ coverage() }}%</span>
                 <span class="text-xs text-emerald-600 font-medium mb-1">+2.4%</span>
               </div>
             </div>
@@ -79,7 +79,7 @@ import { cn } from '../../shared/utils';
                 <span class="text-xs font-bold text-slate-500 uppercase">Equity Score</span>
               </div>
               <div class="flex items-end gap-2">
-                <span class="text-2xl font-bold text-slate-900">{{ MOCK_KPIS.equityScore }}/100</span>
+                <span class="text-2xl font-bold text-slate-900 dark:text-white">{{ equityScore() }}/100</span>
                 <span class="text-xs text-slate-400 font-medium mb-1">Target: 85</span>
               </div>
             </div>
@@ -87,7 +87,7 @@ import { cn } from '../../shared/utils';
               <div class="flex items-center justify-between mb-2">
                 <span class="text-xs font-bold text-slate-500 uppercase">Assigned</span>
               </div>
-              <div class="text-2xl font-bold text-slate-900">{{ MOCK_KPIS.assignedEmployees }}</div>
+              <div class="text-2xl font-bold text-slate-900 dark:text-white">{{ assignedEmployees() }}</div>
             </div>
             <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
               <div class="flex items-center justify-between mb-2">
@@ -95,7 +95,7 @@ import { cn } from '../../shared/utils';
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-emerald-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
               </div>
               <div class="flex items-center gap-2">
-                <span class="text-sm font-semibold text-emerald-700">Rule 10% Met</span>
+                <span class="text-sm font-semibold text-emerald-700 dark:text-emerald-400">{{ isCompliant() ? 'Rule 10% Met' : 'Check rules' }}</span>
                 <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
               </div>
             </div>
@@ -179,9 +179,15 @@ import { cn } from '../../shared/utils';
   `,
   imports: [FormsModule],
 })
-export class PlanningComponent {
+export class PlanningComponent implements OnInit {
+  private readonly planning = inject(PlanningService);
+  private readonly analytics = inject(AnalyticsService);
+
   generating = signal(false);
-  MOCK_KPIS = MOCK_KPIS;
+  coverage = signal(0);
+  equityScore = signal(0);
+  assignedEmployees = signal(0);
+  isCompliant = signal(true);
   isSimulating = signal(false);
   selectedWeek = 'Week 10 - 2026';
   days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -193,7 +199,17 @@ export class PlanningComponent {
   ];
   cn = cn;
 
-  constructor(private planning: PlanningService) {}
+  ngOnInit(): void {
+    this.analytics.getKpis().subscribe((kpis) => {
+      const c = kpis.find((k) => k.type === 'Coverage');
+      const e = kpis.find((k) => k.type === 'EquityIndex');
+      const r = kpis.find((k) => k.type === 'RuleCompliance');
+      if (c) this.coverage.set(Number(c.value));
+      if (e) this.equityScore.set(Number(e.value));
+      if (r) this.isCompliant.set(r.status === 'ok');
+      this.assignedEmployees.set(42);
+    });
+  }
 
   generatePlanning(): void {
     this.generating.set(true);

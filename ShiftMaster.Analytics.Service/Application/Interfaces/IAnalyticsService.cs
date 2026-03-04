@@ -9,4 +9,7 @@ public interface IAnalyticsService
     Task<IReadOnlyList<KpiDto>> GetKpisAsync(CancellationToken ct = default);
     Task<HeatmapDto> GetHeatmapAsync(CancellationToken ct = default);
     Task<SimulateResultDto> SimulateAsync(SimulateRequestDto request, CancellationToken ct = default);
+    Task<IReadOnlyList<DashboardAlertDto>> GetAlertsAsync(CancellationToken ct = default);
+    Task<IReadOnlyList<RecentActivityDto>> GetRecentActivityAsync(CancellationToken ct = default);
+    Task<IReadOnlyList<AuditLogDto>> GetAuditLogAsync(CancellationToken ct = default);
 }

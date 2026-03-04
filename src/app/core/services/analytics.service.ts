@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of, catchError } from 'rxjs';
+import { Observable, of, catchError, map } from 'rxjs';
 import {
   KpiData,
   CoverageHeatmapData,
@@ -30,7 +30,7 @@ export class AnalyticsService {
    * Heatmap couverture
    */
   getCoverageHeatmap(): Observable<CoverageHeatmapData> {
-    return this.http.get<CoverageHeatmapData>(`${this.baseUrl}/coverage-heatmap`).pipe(
+    return this.http.get<CoverageHeatmapData>(`${this.baseUrl}/heatmap`).pipe(
       catchError(() => of(this.getMockHeatmap()))
     );
   }
@@ -40,7 +40,13 @@ export class AnalyticsService {
    */
   getShiftRotationHistogram(): Observable<ShiftRotationHistogramData> {
     return this.http
-      .get<ShiftRotationHistogramData>(`${this.baseUrl}/shift-rotation`)
+      .get<CoverageHeatmapData>(`${this.baseUrl}/heatmap`)
+      .pipe(
+        map((heatmap) => ({
+          labels: heatmap.days.flatMap(() => heatmap.shifts),
+          values: heatmap.values.flat().map((v) => Number(v)),
+        }))
+      )
       .pipe(catchError(() => of(this.getMockHistogram())));
   }
 
@@ -48,9 +54,16 @@ export class AnalyticsService {
    * Radar compétences
    */
   getSkillRadar(): Observable<SkillRadarData> {
-    return this.http.get<SkillRadarData>(`${this.baseUrl}/skill-radar`).pipe(
-      catchError(() => of(this.getMockRadar()))
-    );
+    return this.http
+      .get<{ rankings?: { name: string; score: number }[] }>(`${this.baseUrl}/team-ranking`)
+      .pipe(
+        map((res) => ({
+          labels: (res.rankings ?? []).map((r) => r.name).slice(0, 6),
+          values: (res.rankings ?? []).map((r) => Number(r.score)).slice(0, 6),
+          maxValue: 100,
+        }))
+      )
+      .pipe(catchError(() => of(this.getMockRadar())));
   }
 
   /**
@@ -70,6 +83,27 @@ export class AnalyticsService {
   /** Classement équipe (API existante) */
   getTeamRanking(): Observable<unknown> {
     return this.http.get(`${this.baseUrl}/team-ranking`).pipe(catchError(() => of(null)));
+  }
+
+  /** Alertes dashboard (sous-effectif, conflits, conformité) */
+  getAlerts(): Observable<{ id: string; type: string; title: string; message: string; priority: string; time: string; team: string }[]> {
+    return this.http.get<{ id: string; type: string; title: string; message: string; priority: string; time: string; team: string }[]>(`${this.baseUrl}/alerts`).pipe(
+      catchError(() => of([]))
+    );
+  }
+
+  /** Activité récente (planning, rapports, congés) */
+  getRecentActivity(): Observable<{ user: string; action: string; target: string; time: string }[]> {
+    return this.http.get<{ user: string; action: string; target: string; time: string }[]>(`${this.baseUrl}/recent-activity`).pipe(
+      catchError(() => of([]))
+    );
+  }
+
+  /** Journal d'audit */
+  getAuditLog(): Observable<{ id: string; user: string; action: string; target: string; timestamp: string; isSensitive: boolean }[]> {
+    return this.http.get<{ id: string; user: string; action: string; target: string; timestamp: string; isSensitive: boolean }[]>(`${this.baseUrl}/audit-log`).pipe(
+      catchError(() => of([]))
+    );
   }
 
   private getMockKpis(): KpiData[] {

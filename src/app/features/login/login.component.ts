@@ -43,7 +43,7 @@ import { Role } from '../../shared/types';
               name="email"
               required
               class="w-full rounded-lg border border-slate-300 px-4 py-2 dark:border-slate-600 dark:bg-slate-700 dark:text-white"
-              placeholder="admin&#64;shiftmaster.com"
+              [placeholder]="placeholderEmail"
             />
           </div>
           <div>
@@ -58,7 +58,7 @@ import { Role } from '../../shared/types';
             />
           </div>
           <p class="text-xs text-slate-500 dark:text-slate-400">
-            {{ 'login.demoHint' | translate: translate.lang() }}
+            Démo : {{ demoCredentials }}
           </p>
           <button
             type="submit"
@@ -73,6 +73,8 @@ import { Role } from '../../shared/types';
   `,
 })
 export class LoginComponent {
+  placeholderEmail = 'admin@shiftmaster.com';
+  demoCredentials = 'admin@shiftmaster.com / ShiftMaster123!';
   email = 'admin@shiftmaster.com';
   password = 'ShiftMaster123!';
   loading = signal(false);

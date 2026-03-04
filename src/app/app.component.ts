@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AnalyticsService } from './core/services/analytics.service';
+import { MOCK_ALERTS } from './shared/mock-data';
 import { NotificationSignalService } from './core/services/notification-signal.service';
 
 @Component({

@@ -5,7 +5,6 @@ import { AuthService } from '../auth/auth.service';
 import { AuthApiService } from '../services/auth-api.service';
 import { ThemeService } from '../services/theme.service';
 import { NotificationSignalService } from '../services/notification-signal.service';
-import { TranslateService } from '../services/translate.service';
 import { Role } from '../../shared/types';
 import { cn } from '../../shared/utils';
 import { TranslatePipe } from '../../shared/pipes/translate.pipe';

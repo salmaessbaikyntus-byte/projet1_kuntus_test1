@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\ShiftMaster.Employee.Service.props" />
-</Project>

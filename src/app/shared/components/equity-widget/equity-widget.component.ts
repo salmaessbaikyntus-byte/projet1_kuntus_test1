@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 const CIRCUMFERENCE = 2 * Math.PI * 20; // r=20
 
@@ -26,23 +26,25 @@ const CIRCUMFERENCE = 2 * Math.PI * 20; // r=20
           stroke-width="4"
           fill="transparent"
           [attr.stroke-dasharray]="circumference"
-          [attr.stroke-dashoffset]="dashOffset()"
+          [attr.stroke-dashoffset]="getDashOffset()"
           class="text-indigo-600 dark:text-indigo-400 transition-[stroke-dashoffset] duration-500 ease-out"
         />
       </svg>
-      <span class="absolute text-[10px] font-bold text-slate-900 dark:text-slate-100">{{ score() }}%</span>
+      <span class="absolute text-[10px] font-bold text-slate-900 dark:text-slate-100">{{ displayScore }}%</span>
     </div>
   `,
   styles: [],
 })
 export class EquityWidgetComponent {
-  score = input<number>(0);
+  @Input() score = 0;
 
   protected readonly circumference = CIRCUMFERENCE;
 
-  protected readonly dashOffset = computed(() => {
-    const s = this.score() ?? 0;
-    const clamped = Math.min(100, Math.max(0, s));
-    return CIRCUMFERENCE * (1 - clamped / 100);
-  });
+  protected get displayScore(): number {
+    return Math.min(100, Math.max(0, this.score ?? 0));
+  }
+
+  protected getDashOffset(): number {
+    return CIRCUMFERENCE * (1 - this.displayScore / 100);
+  }
 }

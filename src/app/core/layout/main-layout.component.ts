@@ -1,17 +1,10 @@
-<<<<<<< HEAD
-import { Component, signal, computed, effect, OnInit } from '@angular/core';
+import { Component, signal, computed, effect, OnInit, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
 import { AuthApiService } from '../services/auth-api.service';
 import { ThemeService } from '../services/theme.service';
-=======
-import { Component, signal, computed, effect, inject } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { AuthService } from '../auth/auth.service';
 import { NotificationSignalService } from '../services/notification-signal.service';
->>>>>>> aedb5f8dd3c6b6db4b1b2c72e3afa44ffc977c1b
 import { Role } from '../../shared/types';
 import { cn } from '../../shared/utils';
 

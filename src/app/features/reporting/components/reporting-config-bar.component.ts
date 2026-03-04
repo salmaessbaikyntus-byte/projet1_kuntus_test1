@@ -44,7 +44,7 @@ const TEAMS = ['Équipe A', 'Équipe B', 'Équipe C'];
           </label>
           <select
             [ngModel]="reportType()"
-            (ngModelChange)="reportType.set($event)"
+            (ngModelChange)="onReportTypeChange($event)"
             class="rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-700 dark:text-white"
           >
             @for (t of reportTypes(); track t) {
@@ -147,6 +147,10 @@ export class ReportingConfigBarComponent {
         this.reportType.set(types[0]);
       }
     });
+  }
+
+  onReportTypeChange(value: string): void {
+    this.reportType.set(value as ReportType);
   }
 
   onGenerate(): void {

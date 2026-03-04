@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of, map, catchError } from 'rxjs';
 import {
   Report,
+  ReportCategory,
+  ReportType,
   ReportConfig,
   ReportStatus,
   REPORT_TYPES_BY_CATEGORY,
@@ -93,8 +95,8 @@ export class ReportingService {
     return {
       id: r.id,
       name: r.name,
-      category: r.category,
-      reportType: r.reportType,
+      category: r.category as ReportCategory,
+      reportType: r.reportType as ReportType,
       periodStart: r.periodStart,
       periodEnd: r.periodEnd,
       author: r.author,
